@@ -53,6 +53,9 @@ const packages: any = {
     format: 'cjs',
     defaultExtension: 'js',
     main: 'progress-circle.js'
+  },
+  'angular2-google-maps': {
+    defaultExtension: 'js'
   }
 };
 
