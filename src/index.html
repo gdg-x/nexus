@@ -30,6 +30,9 @@
   <script src="vendor/systemjs/dist/system.src.js"></script>
   <script src="vendor/zone.js/dist/zone.js"></script>
 
+  <script src="https://cdn.ravenjs.com/3.0.4/raven.min.js"></script>
+  <script>Raven.config('https://7f758c95b0aa48e79069acdc3fef6b2e@app.getsentry.com/78343').install();</script>
+
   <script>
     System.import('system-config.js').then(function () {
       System.import('main');
