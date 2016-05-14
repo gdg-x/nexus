@@ -11,6 +11,7 @@ import { GroupsComponent } from './+groups';
 import { GoalsComponent } from './+goals';
 import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
+import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Component({
   moduleId: module.id,
@@ -37,7 +38,7 @@ import { ConductComponent } from './+conduct';
 export class NexusAppComponent {
   title = 'Nexus';
 
-  constructor(mdIconRegistry: MdIconRegistry, private router: Router) {}
+  constructor(mdIconRegistry: MdIconRegistry, private router: Router, public af: AngularFire) {}
 
   ngOnInit() {
     if (window.location.hash === '') {
@@ -46,4 +47,15 @@ export class NexusAppComponent {
       this.router.navigate([window.location.hash]);
     }
   }
+
+  login() {
+    this.af.auth.login({
+      provider: AuthProviders.Google,
+      method: AuthMethods.Popup,
+    }).then(function(result){
+      // here as placeholder; need to do something with the info
+      console.log(result);
+    });
+  }
+
 }
