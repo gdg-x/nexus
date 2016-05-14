@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
 import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
@@ -35,7 +35,7 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
   {path: '#!/benefits', component: BenefitsComponent},
   {path: '#!/conduct', component: ConductComponent}
 ])
-export class NexusAppComponent {
+export class NexusAppComponent implements OnInit {
   title = 'Nexus';
 
   constructor(mdIconRegistry: MdIconRegistry, private router: Router, public af: AngularFire) {}
