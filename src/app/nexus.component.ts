@@ -28,11 +28,11 @@ import { ConductComponent } from './+conduct';
   providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, MdIconRegistry]
 })
 @Routes([
-  {path: '/about', component: AboutComponent},
-  {path: '/groups', component: GroupsComponent},
-  {path: '/goals', component: GoalsComponent},
-  {path: '/benefits', component: BenefitsComponent},
-  {path: '/conduct', component: ConductComponent}
+  {path: '#!/about', component: AboutComponent},
+  {path: '#!/groups', component: GroupsComponent},
+  {path: '#!/goals', component: GoalsComponent},
+  {path: '#!/benefits', component: BenefitsComponent},
+  {path: '#!/conduct', component: ConductComponent}
 ])
 export class NexusAppComponent {
   title = 'Nexus';
@@ -40,6 +40,10 @@ export class NexusAppComponent {
   constructor(mdIconRegistry: MdIconRegistry, private router: Router) {}
 
   ngOnInit() {
-    this.router.navigate(['/about']);
+    if (window.location.hash === '') {
+      this.router.navigate(['#!/about']);
+    } else {
+      this.router.navigate([window.location.hash]);
+    }
   }
 }
