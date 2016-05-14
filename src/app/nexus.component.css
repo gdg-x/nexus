@@ -1,0 +1,42 @@
+md-sidenav {
+  width: 250px;
+}
+md-sidenav md-toolbar {
+  padding-left: 8px;
+  background: #1976D2;
+}
+md-sidenav-layout md-toolbar {
+  background: #1976D2;
+}
+md-sidenav md-toolbar span {
+  padding-left: 8px;
+}
+router-outlet {
+  padding: 15px;
+}
+md-sidenav a {
+  text-align: start;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #3F51B5;
+}
+md-nav-list md-icon {
+  vertical-align: middle;
+  padding-right: 16px;
+}
+[md-button]:hover,
+[md-button]:focus {
+  background-color: rgba(195, 0, 47, 0.12);
+}
+#logo {
+  padding-top: 16px;
+}
+#title {
+  color: white;
+  font-size: 24px;
+  padding-left: 4px;
+  position: relative;
+  left: 0;
+  bottom: 9px;
+  font-weight: 200;
+}
