@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { HTTP_PROVIDERS } from '@angular/http';
-import { Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MdButton } from '@angular2-material/button';
@@ -37,5 +37,9 @@ import { ConductComponent } from './+conduct';
 export class NexusAppComponent {
   title = 'Nexus';
 
-  constructor(mdIconRegistry: MdIconRegistry) {}
+  constructor(mdIconRegistry: MdIconRegistry, private router: Router) {}
+
+  ngOnInit() {
+    this.router.navigate(['/about']);
+  }
 }
