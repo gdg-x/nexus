@@ -1,0 +1,6 @@
+md-sidenav {
+  width: 320px;
+}
+router-outlet {
+  padding: 15px;
+}

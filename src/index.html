@@ -1,10 +1,12 @@
 <!doctype html>
-<html>
+<html class="layout-column layout-fill">
 <head>
   <meta charset="utf-8">
   <title>Angular Nexus</title>
   <base href="/">
   {{content-for 'head'}}
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="app/shared/layouts.css" rel="stylesheet">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -20,8 +22,8 @@
   </script>
   -->
 </head>
-<body>
-  <nexus-app>Loading...</nexus-app>
+<body class="layout-column layout-fill">
+  <nexus-app class="layout-column layout-fill">Loading...</nexus-app>
 
   <script src="vendor/es6-shim/es6-shim.js"></script>
   <script src="vendor/reflect-metadata/Reflect.js"></script>

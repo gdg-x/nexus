@@ -1,3 +1,26 @@
-<h1>
-  {{ title }}
-</h1>
+<md-sidenav-layout class="layout-column layout-fill">
+  <md-sidenav #start mode="over" class="layout-column layout-fill">
+    <md-toolbar color="primary">
+      <button md-icon-button (click)="start.close()">
+        <md-icon class="md-24">menu</md-icon>
+      </button>
+    </md-toolbar>
+    <div>
+      <md-nav-list class="layout-column">
+        <a md-button [routerLink]="['about']" class="flex" (click)="start.close()">About</a>
+      </md-nav-list>
+    </div>
+  </md-sidenav>
+
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="start.open()">
+      <md-icon class="md-24">menu</md-icon>
+    </button>
+    <div>
+      <h1 style="padding-left: 8px">{{ title }}</h1>
+    </div>
+  </md-toolbar>
+
+  <router-outlet class="layout-column layout-fill"></router-outlet>
+
+</md-sidenav-layout>
