@@ -17,7 +17,6 @@ export class GroupsComponent implements OnInit {
   meetupService: MeetupService;
   mapMarkers: MapMarker;
   errorMessage: string;
-  
   zoom: number = 2;
   lat: number = 23.5000002;
   lng: number = 7.9990339;
@@ -32,7 +31,7 @@ export class GroupsComponent implements OnInit {
   }
 
   getTopicGroups() {
-    this.meetupService.getTopicGroups(environment.topicName)
+    this.meetupService.getGroups(environment.topicName)
     .subscribe(
       result => {
         this.mapMarkers = <MapMarker>result;
