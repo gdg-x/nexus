@@ -1,0 +1,37 @@
+.hero-toolbar {
+  height: 300px;
+  margin-bottom: 16px;
+  background: #1E88E5;
+}
+#about-community {
+  font-size: 36px;
+  opacity: 0.7;
+  margin-bottom: 24px;
+  margin-top: 24px;
+}
+#description {
+  width: 60%;
+  opacity: 0.7;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+#members {
+  opacity: 0.7;
+  font-size: 36px;
+  color: #DD0031;
+  font-style: italic;
+  margin-top: 120px;
+  margin-bottom: 24px;
+}
+[md-button] {
+  color: #3F51B5;
+}
+md-card-content > p {
+  opacity: 0.7;
+}
+md-card {
+  /*height: 300px;*/
+  width: 600px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}

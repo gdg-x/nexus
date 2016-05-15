@@ -1,3 +1,38 @@
-<h2 style="padding-left: 16px;">
-  About
-</h2>
+<div *ngIf="!topic" class="layout-column layout-align-center-center">
+  <md-toolbar class="hero-toolbar"></md-toolbar>
+  <md-progress-circle mode="indeterminate" color="warn" class="flex-30"></md-progress-circle>
+</div>
+<div *ngIf="topic" class="layout-row layout-align-center-center layout-fill layout-wrap">
+  <md-toolbar style="height: 300px; margin-bottom: 16px; background: #1E88E5; color: white;"
+              class="layout-row layout-align-center-center flex-100">
+    <span style="font-size: 36px">Welcome to the global {{ topic.name }} Community</span>
+  </md-toolbar>
+  <div class="layout-column layout-align-center-center layout-wrap" style="margin: 48px 0 128px 0;">
+    <span id="about-community">About the Community</span>
+    <p id="description">
+      {{ topic.description }}
+    </p>
+    <p id="members">
+      There are currently {{ topic.members }} members in our global community of meetups!
+    </p>
+  </div>
+  <md-card>
+    <a href="{{ topic.link }}" target="_blank">
+      <img md-card-image src="https://upload.wikimedia.org/wikipedia/commons/7/73/Meetup_Logo_2015.png">
+    </a>
+    <md-card-title>Our Community on Meetup.com</md-card-title>
+    <md-card-content>
+      <p>Meetup is the world's largest network of local groups. Meetup makes it easy for anyone to organize a local
+        group or find one of the thousands already meeting up face-to-face. More than 9,000 groups get together in
+        local communities each day, each one with the goal of improving themselves or their communities.
+
+        Meetup's mission is to revitalize local community and help people around the world self-organize. Meetup
+        believes that people can change their personal world, or the whole world, by organizing themselves into groups
+        that are powerful enough to make a difference.
+      </p>
+    </md-card-content>
+    <md-card-actions align="end">
+      <a md-button href="{{ topic.link }}" target="_blank">Open</a>
+    </md-card-actions>
+  </md-card>
+</div>

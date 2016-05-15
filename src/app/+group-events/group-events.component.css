@@ -1,0 +1,6 @@
+[md-button] {
+  color: #3F51B5;
+}
+md-card-content > p {
+  opacity: 0.8;
+}
