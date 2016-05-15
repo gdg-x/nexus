@@ -1,6 +1,24 @@
-<sebm-google-map
-     [latitude]="lat"
-     [longitude]="lng"
-     [zoom]="zoom">
+<sebm-google-map 
+  [latitude]="lat"
+  [longitude]="lng"
+  [zoom]="zoom"
+  [disableDefaultUI]="false"
+  [zoomControl]="true"
+  (mapClick)="mapClicked($event)">
+
+  <sebm-google-map-marker 
+      *ngFor="let m of markers; let i = index"
+      (markerClick)="clickedMarker(m.label, i)"
+      [latitude]="m.lat"
+      [longitude]="m.lng"
+      [label]="m.label"
+      [markerDraggable]="m.draggable">
+
+    <sebm-google-map-info-window *ngIf="m.info">
+      <a href="{{ m.info.link }}" class="info-link" target="_blank">{{ m.info.chapter }}</a>
+      {{ m.info.city }},&nbsp;{{ m.info.country }}
+    </sebm-google-map-info-window>
+
+  </sebm-google-map-marker>
 
 </sebm-google-map>
