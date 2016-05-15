@@ -14,7 +14,8 @@ module.exports = function(defaults) {
       '@angular/**/*.js',
       '@angular2-material/**/*.js',
       'angularfire2/**/*.js',
-      'firebase/lib/*.js'
+      'firebase/lib/*.js',
+      'angular2-google-maps/**/*.js'
     ]
   });
 };
