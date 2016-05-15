@@ -1,0 +1,13 @@
+<div class="layout-row layout-align-center-center layout-wrap layout-margin">
+ <md-card *ngFor="let gevent of gevents" class="flex-60">
+    <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
+    <md-card-title>{{gevent.name}}</md-card-title>
+    <md-card-content>
+      <p>{{gevent.description}}</p>
+    </md-card-content>
+    <md-card-actions align="end">
+      <button md-button>LIKE</button>
+      <button md-button>SHARE</button>
+    </md-card-actions>
+  </md-card>
+</div>

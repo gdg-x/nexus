@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
+import { HTTP_PROVIDERS, JSONP_PROVIDERS } from '@angular/http';
 import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -12,6 +12,8 @@ import { GoalsComponent } from './+goals';
 import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
+import { GroupEventsComponent } from './+group-events';
+import { GroupEventsService } from './group-events.service';
 
 @Component({
   moduleId: module.id,
@@ -26,14 +28,21 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
     MdToolbar,
     MD_LIST_DIRECTIVES
   ],
-  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, MdIconRegistry]
+  providers: [
+    ROUTER_PROVIDERS,
+    JSONP_PROVIDERS,
+    HTTP_PROVIDERS,
+    MdIconRegistry,
+    GroupEventsService
+  ]
 })
 @Routes([
   {path: '#!/about', component: AboutComponent},
   {path: '#!/groups', component: GroupsComponent},
   {path: '#!/goals', component: GoalsComponent},
   {path: '#!/benefits', component: BenefitsComponent},
-  {path: '#!/conduct', component: ConductComponent}
+  {path: '#!/conduct', component: ConductComponent},
+  {path: '#!/group_events', component: GroupEventsComponent}
 ])
 export class NexusAppComponent implements OnInit {
   title = 'Nexus';
@@ -62,10 +71,6 @@ export class NexusAppComponent implements OnInit {
               name: authData.google['displayName'],
               token : authData.google['accessToken']});
     });
-  }
-
-  addUser(authData){
-
   }
 
 }
