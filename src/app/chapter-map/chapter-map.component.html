@@ -15,7 +15,7 @@
       [markerDraggable]="m.draggable">
 
     <sebm-google-map-info-window *ngIf="m.info">
-      <a href="{{ m.info.link }}" class="info-link" target="_blank">{{ m.info.chapter }}</a>
+      <a (click)="navigate(m.info.urlname)" class="info-link">{{ m.info.chapter }}</a>
       {{ m.info.city }},&nbsp;{{ m.info.country }}
     </sebm-google-map-info-window>
 

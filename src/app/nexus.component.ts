@@ -15,9 +15,7 @@ import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
 import { GroupAboutComponent } from './+group-about';
 import { GroupSponsorComponent } from './+group-sponsor';
-
-
-
+import { UsersService } from './users.service';
 
 
 @Component({
@@ -35,10 +33,9 @@ import { GroupSponsorComponent } from './+group-sponsor';
   ],
   providers: [
     ROUTER_PROVIDERS,
-    JSONP_PROVIDERS,
-    HTTP_PROVIDERS,
     MdIconRegistry,
-    GroupEventsService
+    GroupEventsService,
+    UsersService
   ]
 })
 @Routes([
@@ -54,7 +51,7 @@ import { GroupSponsorComponent } from './+group-sponsor';
 export class NexusAppComponent implements OnInit {
   title = 'Nexus';
 
-  constructor(mdIconRegistry: MdIconRegistry, private router: Router) {}
+  constructor(mdIconRegistry: MdIconRegistry, private router: Router, private usersService: UsersService) {}
 
   ngOnInit() {
     if (window.location.hash === '') {

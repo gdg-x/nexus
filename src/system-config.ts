@@ -86,8 +86,6 @@ const barrels: string[] = [
   'app/+goals',
   'app/+benefits',
   'app/+conduct',
-  'app/events',
-  'app/group-events',
   'app/+group-events',
   'app/chapter-map',
   'app/+blog',
@@ -96,6 +94,10 @@ const barrels: string[] = [
   'app/group-sponsors',
   'app/+group-about',
   'app/+group-sponsor',
+  'app/+group',
+  'app/+group/+blog',
+  'app/+group/+events',
+  'app/+group/+sponsors',
   /** @cli-barrel */
 ];
 
