@@ -8,7 +8,18 @@ import { MapMarker } from './map-marker';
 @Injectable()
 export class MeetupService {
   baseUrl: string = 'https://api.meetup.com/';
-  
+  urlname: string;
+
+  setUrlname(urlname: string) {
+    console.log('urlname: ' + urlname);
+    this.urlname = urlname;
+  }
+
+  getUrlname(): string {
+    console.log('Returning urlname: ' + this.urlname);
+    return this.urlname;
+  }
+
   constructor(private jsonp: Jsonp) {}
 
   getTopicDetails(topicName: string): Observable<Topic> {
@@ -39,7 +50,7 @@ export class MeetupService {
       throw new Error('Response status: ' + res.status);
     }
     let markers = [];
-    for (let i=0; i < res.json().results.length; i++) {
+    for (let i = 0; i < res.json().results.length; i++) {
       markers.push({
         lat: res.json().results[i].lat,
         lng: res.json().results[i].lon,
@@ -51,23 +62,23 @@ export class MeetupService {
         meetupLink: res.json().results[i].link
       });
     }
-    
+
     // sort by country then chapter name
     markers.sort((a: any, b: any) => {
       let cA: string = a.country.toLowerCase(),
           cb: string = b.country.toLowerCase(),
           chA: string = a.chapter.toLowerCase(),
           chB: string = b.chapter.toLowerCase();
-      if (cA < cb) return -1;
-      if (cA > cb) return 1;
-      if (chA < chB) return -1;
-      if (chA > chB) return 1;
+      if (cA < cb) { return -1; }
+      if (cA > cb) { return 1; }
+      if (chA < chB) { return -1; }
+      if (chA > chB) { return 1; }
       return 0;
     });
-    
+
     return markers || {};
   }
-  
+
   private handleError (error: any) {
     // In a real world app, we might use a remote logging infrastructure
     let errMsg = error.message || 'Server error';

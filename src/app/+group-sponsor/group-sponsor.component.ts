@@ -1,24 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
-import { GEvent } from './gevent';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { EventFilter } from '../event-filter.pipe';
 import { GAbout } from '../+group-events/gabout';
+import { MdToolbar } from '@angular2-material/toolbar';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MeetupService } from '../meetup.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-group-events',
-  templateUrl: 'group-events.component.html',
-  styleUrls: ['group-events.component.css'],
+  selector: 'app-group-sponsor',
+  templateUrl: 'group-sponsor.component.html',
+  styleUrls: ['group-sponsor.component.css'],
   providers: [MeetupService],
-  directives: [MD_CARD_DIRECTIVES],
-  pipes: [EventFilter]
+  directives: [MdToolbar, MD_CARD_DIRECTIVES]
 })
-export class GroupEventsComponent implements OnInit {
+export class GroupSponsorComponent implements OnInit {
   errorMessage: string;
-  gevents: GEvent[];
   gabouts: GAbout[];
 
   constructor(private meetupService: MeetupService,
@@ -26,18 +23,10 @@ export class GroupEventsComponent implements OnInit {
               private router: Router) {}
 
   ngOnInit() {
-    this.getEvents();
-    this.getAbout();
+    this.getSponsors();
   }
 
-  getEvents() {
-    this.eventService.getEvents()
-    .subscribe(
-      gevents => this.gevents = gevents,
-      error => this.errorMessage = <any>error);
-  }
-
-  getAbout() {
+  getSponsors() {
     this.eventService.getAbout()
     .subscribe(
       gabouts => this.gabouts = gabouts,

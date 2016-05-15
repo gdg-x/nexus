@@ -9,17 +9,29 @@
     <div>
       <md-nav-list class="layout-column">
         <a md-button [routerLink]="['#!/about']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">info</md-icon>About</a>
+          <md-icon class="md-24">info</md-icon>
+          About</a>
         <a md-button [routerLink]="['#!/groups']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">group</md-icon>Groups</a>
-        <a md-button [routerLink]="['#!/goals']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">assignment_turned_in</md-icon>Goals</a>
-        <a md-button [routerLink]="['#!/benefits']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">beenhere</md-icon>Benefits of Membership</a>
+          <md-icon class="md-24">group</md-icon>
+          Groups</a>
+        <!--<a md-button [routerLink]="['#!/goals']" class="flex" (click)="start.close()">-->
+          <!--<md-icon class="md-24">assignment_turned_in</md-icon>-->
+          <!--Goals</a>-->
+        <!--<a md-button [routerLink]="['#!/benefits']" class="flex" (click)="start.close()">-->
+          <!--<md-icon class="md-24">beenhere</md-icon>-->
+          <!--Benefits of Membership</a>-->
         <a md-button [routerLink]="['#!/conduct']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">accessibility</md-icon>Code of Conduct</a>
-         <a md-button [routerLink]="['#!/group_events']" class="flex" (click)="start.close()">
-          <md-icon class="md-24">accessibility</md-icon>Group Events</a>
+          <md-icon class="md-24">accessibility</md-icon>
+          Code of Conduct</a>
+        <a md-button [routerLink]="['#!/group_events']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">today</md-icon>
+          Group Events</a>
+        <a md-button [routerLink]="['#!/group_about']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">info</md-icon>
+          About Group</a>
+        <a md-button [routerLink]="['#!/group_sponsor']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">local_atm</md-icon>
+          Group Sponsor</a>
       </md-nav-list>
     </div>
   </md-sidenav>

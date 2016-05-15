@@ -13,6 +13,8 @@ import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
 import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
+import { GroupAboutComponent } from './+group-about';
+import { GroupSponsorComponent } from './+group-sponsor';
 import { UsersService } from './users.service';
 
 @Component({
@@ -42,7 +44,9 @@ import { UsersService } from './users.service';
   {path: '#!/goals', component: GoalsComponent},
   {path: '#!/benefits', component: BenefitsComponent},
   {path: '#!/conduct', component: ConductComponent},
-  {path: '#!/group_events', component: GroupEventsComponent}
+  {path: '#!/group_events', component: GroupEventsComponent},
+  {path: '#!/group_about', component: GroupAboutComponent},
+  {path: '#!/group_sponsor', component: GroupSponsorComponent}
 ])
 export class NexusAppComponent implements OnInit {
   title = 'Nexus';

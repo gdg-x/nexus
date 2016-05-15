@@ -1,40 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
-import { GEvent } from './gevent';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { EventFilter } from '../event-filter.pipe';
 import { GAbout } from '../+group-events/gabout';
+import { MdToolbar } from '@angular2-material/toolbar';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MeetupService } from '../meetup.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'app-group-events',
-  templateUrl: 'group-events.component.html',
-  styleUrls: ['group-events.component.css'],
+  selector: 'app-group-about',
+  templateUrl: 'group-about.component.html',
+  styleUrls: ['group-about.component.css'],
   providers: [MeetupService],
-  directives: [MD_CARD_DIRECTIVES],
-  pipes: [EventFilter]
+  directives: [MdToolbar, MD_CARD_DIRECTIVES]
 })
-export class GroupEventsComponent implements OnInit {
+export class GroupAboutComponent implements OnInit {
   errorMessage: string;
-  gevents: GEvent[];
   gabouts: GAbout[];
+  urlname: string;
 
   constructor(private meetupService: MeetupService,
               private eventService: GroupEventsService,
               private router: Router) {}
 
   ngOnInit() {
-    this.getEvents();
+    this.urlname = this.meetupService.getUrlname();
+    console.log('Opening group with urlname: ' + this.urlname);
     this.getAbout();
-  }
-
-  getEvents() {
-    this.eventService.getEvents()
-    .subscribe(
-      gevents => this.gevents = gevents,
-      error => this.errorMessage = <any>error);
   }
 
   getAbout() {
