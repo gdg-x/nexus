@@ -1,0 +1,4 @@
+[md-button]:hover,
+[md-button]:focus {
+    background-color: rgba(195, 0, 47, 0.12);
+}

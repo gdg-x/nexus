@@ -14,6 +14,7 @@ import { ConductComponent } from './+conduct';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
+import { SignInComponent } from './sign-in';
 
 @Component({
   moduleId: module.id,
@@ -57,22 +58,22 @@ export class NexusAppComponent implements OnInit {
     }
   }
 
-  login() {
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
-    }).then((authData) => {
-      console.log(authData);
-
-      // adding the authData to Firebase
-      const itemObservable = this.af.database.list('/users');
-      console.log(itemObservable);
-      itemObservable.push({ provider: authData.auth['provider'],
-        image: authData.google['profileImageURL'],
-        name: authData.google['displayName'],
-        token: authData.google['accessToken'],
-        uid: authData['uid']});
-    });
-  }
+  //login() {
+  //  this.af.auth.login({
+  //    provider: AuthProviders.Google,
+  //    method: AuthMethods.Popup,
+  //  }).then((authData) => {
+  //    console.log(authData);
+  //
+  //    // adding the authData to Firebase
+  //    const itemObservable = this.af.database.list('/users');
+  //    console.log(itemObservable);
+  //    itemObservable.push({ provider: authData.auth['provider'],
+  //      image: authData.google['profileImageURL'],
+  //      name: authData.google['displayName'],
+  //      token: authData.google['accessToken'],
+  //      uid: authData['uid']});
+  //  });
+  //}
 
 }
