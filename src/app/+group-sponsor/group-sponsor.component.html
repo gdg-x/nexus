@@ -1,7 +1,7 @@
 <div class="layout-row layout-align-center-center layout-fill layout-wrap">
   <md-toolbar style="height: 300px; background: #1E88E5; color: white;"
               class="layout-row layout-align-center-center flex-100">
-             <div> <i class="material-icons">people</i>&nbsp;</div>
+    <div><i class="material-icons">people</i>&nbsp;</div>
     <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
   <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
@@ -16,27 +16,27 @@
       ABOUT
     </button>
   </md-toolbar>
-  <div class="layout-column layout-align-center-center layout-wrap" style="margin: 48px 0 128px 0;">
-  <div *ngFor="let gabout of gabouts">
-   <h3>
-    {{gabout.name}}
-    would like to thank their generous sponsors
-   </h3>
-   <md-card *ngFor="let gsponsor of gabout.sponsors">
-    <md-card-header>
-      <img md-card-avatar>
-      <md-card-title>  {{gsponsor.name}} </md-card-title>
-      <md-card-subtitle>{{gsponsor.details}}</md-card-subtitle>
-    </md-card-header>
-    <img src={{gsponsor.image_url}}>
-    <md-card-content>
+  <div class="layout-column layout-align-center-center layout-wrap layout-margin flex-100"
+       style="margin: 48px 0 128px 0;">
+    <div *ngFor="let gabout of gabouts"
+         class="layout-row layout-align-center-center layout-wrap layout-margin">
+      <h3 class="flex-100" style="text-align: center">
+        {{gabout.name}}
+        would like to thank their generous sponsors
+      </h3>
 
-       <a href={{gsponsor.url}}>{{gsponsor.url}}</a>
-       <br>
-       <p> {{gsponsor.info}}</p>
-    </md-card-content>
-  </md-card>
-
+      <md-card *ngFor="let gsponsor of gabout.sponsors" class="flex-100 flex-gt-sm-40 flex-gt-md-30">
+        <md-card-header>
+          <md-card-title> {{gsponsor.name}}</md-card-title>
+          <md-card-subtitle>{{gsponsor.details}}</md-card-subtitle>
+        </md-card-header>
+        <img src={{gsponsor.image_url}}>
+        <md-card-content>
+          <a href={{gsponsor.url}}>{{gsponsor.url}}</a>
+          <br>
+          <p> {{gsponsor.info}}</p>
+        </md-card-content>
+      </md-card>
     </div>
   </div>
 </div>
