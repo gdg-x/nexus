@@ -1,9 +1,9 @@
-<div class="layout-row layout-align-center-center layout-wrap layout-margin">
- <md-card *ngFor="let gevent of gevents" class="flex-60">
-    <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
-    <md-card-title>{{gevent.name}}</md-card-title>
+<div class="layout-row layout-align-center-start layout-wrap layout-margin">
+  <md-card *ngFor="let gevent of gevents" class="flex-gt-sm-30 flex-sm-45">
+    <img md-card-image src="https://angular.io/resources/images/logos/angular2/angular.svg">
+    <md-card-title>{{ gevent.name }}</md-card-title>
     <md-card-content>
-      <div [innerHTML]="gevent.description"></div>
+      <div [innerHTML]="gevent.description | eventFilter"></div>
     </md-card-content>
     <md-card-actions align="end">
       <button md-button>LIKE</button>

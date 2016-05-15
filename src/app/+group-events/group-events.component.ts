@@ -3,6 +3,7 @@ import { GroupEventsService } from '../group-events.service';
 import { GEvent } from './gevent';
 import { JSONP_PROVIDERS } from '@angular/http';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+import { EventFilter } from '../event-filter.pipe';
 
 @Component({
   moduleId: module.id,
@@ -10,8 +11,8 @@ import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
   templateUrl: 'group-events.component.html',
   styleUrls: ['group-events.component.css'],
   providers: [JSONP_PROVIDERS],
-  directives: [MD_CARD_DIRECTIVES]
-
+  directives: [MD_CARD_DIRECTIVES],
+  pipes: [EventFilter]
 })
 export class GroupEventsComponent implements OnInit {
   errorMessage: string;
