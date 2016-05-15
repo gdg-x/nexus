@@ -70,7 +70,8 @@ export class NexusAppComponent implements OnInit {
       itemObservable.push({ provider: authData.auth['provider'],
         image: authData.google['profileImageURL'],
         name: authData.google['displayName'],
-        token : authData.google['accessToken'] });
+        token: authData.google['accessToken'],
+        uid: authData['uid']});
     });
   }
 
