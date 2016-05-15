@@ -7,26 +7,27 @@ import { environment } from './environment';
 
 @Injectable()
 export class GroupEventsService {
-  groupName: string = 'GDG-Chicago-West';
+  groupName: string = 'GDG-Kansas-City';
 
   constructor(private jsonp: Jsonp) {}
 
   // TODO get groupName from router
   private meetupUrl = 'https://api.meetup.com/' + this.groupName + '/events' +
-                       '?photo-host=public&page=20&sig_id=12889940&' +
-                       'sig=af9ff02c67f7b43d1cce0156799398f43842bc56&callback=JSONP_CALLBACK';
+                       '?photo-host=public&page=20&sig_id=12889940&key=' + environment.meetupKey +
+                       '&sig=af9ff02c67f7b43d1cce0156799398f43842bc56&callback=JSONP_CALLBACK';
                        
-  private aboutUrl = 'https://api.meetup.com/2/groups?' + 'key=' + environment.meetupKey + '&offset=0&format=json&group_urlname=GDG-Kansas-City&photo-host=public&page=20&radius=25.0&fields=sponsors&order=id&desc=false&sig_id=12889940&sig=ece277cfc4be272311affb8a8ef00f812181d88a&callback=JSONP_CALLBACK';
+  private aboutUrl = 'https://api.meetup.com/2/groups?key=' + environment.meetupKey + 
+                    '&offset=0&format=json&group_urlname=' + this.groupName + 
+                    '&photo-host=public&page=20&radius=25.0&fields=sponsors&order=id&desc=false' +
+                    '&sig_id=12889940&sig=ece277cfc4be272311affb8a8ef00f812181d88a&callback=JSONP_CALLBACK';
 
-
-
-   getEvents(): Observable<GEvent[]> {
+ getEvents(): Observable<GEvent[]> {
     return this.jsonp.get(this.meetupUrl)
     .map(this.extractData)
     .catch(this.handleError);
   }
   
-    getAbout(): Observable<GAbout[]> {
+  getAbout(): Observable<GAbout[]> {
     return this.jsonp.get(this.aboutUrl)
     .map(this.extractResults)
     .catch(this.handleError);

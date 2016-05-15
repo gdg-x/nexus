@@ -1,4 +1,22 @@
-<div class="layout-row layout-align-center-start layout-wrap layout-margin">
+<div class="layout-row layout-align-center-start layout-fill layout-wrap">
+  <md-toolbar style="height: 300px; background: #1E88E5; color: white;"
+              class="layout-row layout-align-center-center flex-100">
+             <div> <i class="material-icons">people</i>&nbsp;</div>
+    <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
+  </md-toolbar>
+  
+  <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
+            class="layout-row layout-align-center-center flex-100">
+    <button md-raised-button (click)="navigateTo('events')">
+      EVENTS
+    </button>
+    <button md-raised-button>
+      SPONSORS
+    </button>
+    <button md-raised-button>
+      ABOUT
+    </button>
+  </md-toolbar>
   <md-card *ngFor="let gevent of gevents" class="flex-gt-sm-30 flex-sm-45">
     <img md-card-image src="https://angular.io/resources/images/logos/angular2/angular.svg">
     <md-card-title>{{ gevent.name }}</md-card-title>
