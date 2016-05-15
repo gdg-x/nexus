@@ -34,6 +34,8 @@
         <span id="title">{{ title }}</span>
       </a>
     </div>
+    <button md-button [hidden]="usersService.isLoggedIn" (click)="usersService.login()">Sign In</button>
+    <button md-button [hidden]="!(usersService.isLoggedIn)" (click)="usersService.logout()">Logout</button>
   </md-toolbar>
 
   <router-outlet class="layout-column layout-fill" style="padding: 0"></router-outlet>

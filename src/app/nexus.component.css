@@ -40,3 +40,6 @@ md-nav-list md-icon {
   bottom: 9px;
   font-weight: 200;
 }
+[hidden][md-button] {
+  display: none;
+}
