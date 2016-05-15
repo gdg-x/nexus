@@ -15,9 +15,9 @@
       [label]="m.label"
       [markerDraggable]="m.draggable">
 
-    <sebm-google-map-info-window *ngIf="m.info">
-      <a href="{{ m.info.link }}" class="info-link" target="_blank">{{ m.info.chapter }}</a>
-      {{ m.info.city }},&nbsp;{{ m.info.country }}
+    <sebm-google-map-info-window *ngIf="m.chapter">
+      <a href="#!/groups/{{ m.link }}" class="info-link">{{ m.chapter }}</a>
+      {{ m.city }},&nbsp;{{ m.country }}
     </sebm-google-map-info-window>
 
   </sebm-google-map-marker>
