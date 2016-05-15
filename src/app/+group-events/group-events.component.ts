@@ -11,8 +11,7 @@ import { EventFilter } from '../event-filter.pipe';
   templateUrl: 'group-events.component.html',
   styleUrls: ['group-events.component.css'],
   providers: [JSONP_PROVIDERS],
-  directives: [MD_CARD_DIRECTIVES]
-
+  directives: [MD_CARD_DIRECTIVES],
   pipes: [EventFilter]
 })
 export class GroupEventsComponent implements OnInit {
