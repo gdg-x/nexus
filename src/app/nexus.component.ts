@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HTTP_PROVIDERS } from '@angular/http';
+import { HTTP_PROVIDERS, JSONP_PROVIDERS } from '@angular/http';
 import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -13,7 +13,6 @@ import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
 import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
-import { JSONP_PROVIDERS }  from '@angular/http';
 
 @Component({
   moduleId: module.id,
@@ -28,8 +27,13 @@ import { JSONP_PROVIDERS }  from '@angular/http';
     MdToolbar,
     MD_LIST_DIRECTIVES
   ],
-
-  providers: [ROUTER_PROVIDERS, JSONP_PROVIDERS, HTTP_PROVIDERS, MdIconRegistry, GroupEventsService]
+  providers: [
+    ROUTER_PROVIDERS,
+    JSONP_PROVIDERS,
+    HTTP_PROVIDERS,
+    MdIconRegistry,
+    GroupEventsService
+  ]
 })
 @Routes([
   {path: '#!/about', component: AboutComponent},

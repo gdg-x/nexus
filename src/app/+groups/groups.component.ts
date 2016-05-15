@@ -8,19 +8,15 @@ import { ChapterMapComponent } from '../chapter-map';
   styleUrls: ['groups.component.css'],
   directives: [ChapterMapComponent]
 })
-
 export class GroupsComponent implements OnInit {
-  public zoom:number = 2;
-  public lat:number = 23.5000002;
-  public lng:number = 7.9990339;
-  
+  public zoom: number = 2;
+  public lat: number = 23.5000002;
+  public lng: number = 7.9990339;
+
   /*
-  
   Array of groups goes here using the below model
-  
   */
-  
-  markers: marker[] = [{
+  markers: Marker[] = [{
     lat: 38.9536,
     lng: -94.7336,
     info: {
@@ -33,13 +29,11 @@ export class GroupsComponent implements OnInit {
 
   constructor() {}
 
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }
 
 // just an interface for type safety.
-interface marker {
+interface Marker {
   lat: number;
   lng: number;
   label?: string;
