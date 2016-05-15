@@ -1,27 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
-import { MdButton } from '@angular2-material/button';
-import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 
-@Component({
-  moduleId: module.id,
-  selector: 'app-sign-in',
-  templateUrl: 'sign-in.component.html',
-  styleUrls: ['sign-in.component.css'],
-  directives: [
-    MdButton,
-    MdIcon
-  ],
-  providers: [
-    MdIconRegistry
-  ]
-})
-export class SignInComponent implements OnInit {
+@Injectable()
+export class UsersService {
 
-  constructor(mdIconRegistry: MdIconRegistry, public af: AngularFire) {}
+  constructor(public af: AngularFire) {}
 
-  ngOnInit() {
-  }
+  isLoggedIn = <boolean>(false);
 
   login() {
     this.af.auth.login({
@@ -29,6 +14,7 @@ export class SignInComponent implements OnInit {
       method: AuthMethods.Popup,
     }).then((authData) => {
       console.log(authData);
+      this.isLoggedIn = true;
 
       // adding the authData to Firebase
       const itemObservable = this.af.database.list('/users');
@@ -39,6 +25,11 @@ export class SignInComponent implements OnInit {
         token: authData.google['accessToken'],
         uid: authData['uid']});
     });
+  }
+
+  logout(){
+    this.af.auth.logout();
+    this.isLoggedIn = false;
   }
 
 }

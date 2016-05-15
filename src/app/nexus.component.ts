@@ -14,7 +14,7 @@ import { ConductComponent } from './+conduct';
 import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
-import { SignInComponent } from './sign-in';
+import { UsersService } from './users.service';
 
 @Component({
   moduleId: module.id,
@@ -34,7 +34,8 @@ import { SignInComponent } from './sign-in';
     JSONP_PROVIDERS,
     HTTP_PROVIDERS,
     MdIconRegistry,
-    GroupEventsService
+    GroupEventsService,
+    UsersService
   ]
 })
 @Routes([
@@ -48,7 +49,7 @@ import { SignInComponent } from './sign-in';
 export class NexusAppComponent implements OnInit {
   title = 'Nexus';
 
-  constructor(mdIconRegistry: MdIconRegistry, private router: Router, public af: AngularFire) {}
+  constructor(mdIconRegistry: MdIconRegistry, private router: Router, private usersService: UsersService) {}
 
   ngOnInit() {
     if (window.location.hash === '') {
@@ -57,23 +58,5 @@ export class NexusAppComponent implements OnInit {
       this.router.navigate([window.location.hash]);
     }
   }
-
-  //login() {
-  //  this.af.auth.login({
-  //    provider: AuthProviders.Google,
-  //    method: AuthMethods.Popup,
-  //  }).then((authData) => {
-  //    console.log(authData);
-  //
-  //    // adding the authData to Firebase
-  //    const itemObservable = this.af.database.list('/users');
-  //    console.log(itemObservable);
-  //    itemObservable.push({ provider: authData.auth['provider'],
-  //      image: authData.google['profileImageURL'],
-  //      name: authData.google['displayName'],
-  //      token: authData.google['accessToken'],
-  //      uid: authData['uid']});
-  //  });
-  //}
 
 }
