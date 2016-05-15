@@ -1,8 +1,3 @@
-
-<h1>
-  {{ title }} 
-</h1>
-
 <md-sidenav-layout class="layout-column layout-fill">
   <md-sidenav #start mode="over" class="layout-column layout-fill">
     <md-toolbar color="primary">
@@ -23,6 +18,8 @@
           <md-icon class="md-24">beenhere</md-icon>Benefits of Membership</a>
         <a md-button [routerLink]="['#!/conduct']" class="flex" (click)="start.close()">
           <md-icon class="md-24">accessibility</md-icon>Code of Conduct</a>
+         <a md-button [routerLink]="['#!/group_events']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">accessibility</md-icon>Group Events</a>
       </md-nav-list>
     </div>
   </md-sidenav>
@@ -43,3 +40,5 @@
 
 </md-sidenav-layout>
 
+
+<router-outlet></router-outlet>

@@ -11,6 +11,9 @@ import { GroupsComponent } from './+groups';
 import { GoalsComponent } from './+goals';
 import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
+import { GroupEventsComponent } from './+group-events';
+import { GroupEventsService } from './group-events.service';
+import { JSONP_PROVIDERS }  from '@angular/http';
 
 @Component({
   moduleId: module.id,
@@ -25,14 +28,16 @@ import { ConductComponent } from './+conduct';
     MdToolbar,
     MD_LIST_DIRECTIVES
   ],
-  providers: [ROUTER_PROVIDERS, HTTP_PROVIDERS, MdIconRegistry]
+
+  providers: [ROUTER_PROVIDERS, JSONP_PROVIDERS, HTTP_PROVIDERS, MdIconRegistry, GroupEventsService]
 })
 @Routes([
   {path: '#!/about', component: AboutComponent},
   {path: '#!/groups', component: GroupsComponent},
   {path: '#!/goals', component: GoalsComponent},
   {path: '#!/benefits', component: BenefitsComponent},
-  {path: '#!/conduct', component: ConductComponent}
+  {path: '#!/conduct', component: ConductComponent},
+  {path: '#!/group_events', component: GroupEventsComponent}
 ])
 export class NexusAppComponent {
   title = 'Nexus';
