@@ -20,6 +20,10 @@
           <md-icon class="md-24">accessibility</md-icon>Code of Conduct</a>
          <a md-button [routerLink]="['#!/group_events']" class="flex" (click)="start.close()">
           <md-icon class="md-24">accessibility</md-icon>Group Events</a>
+           <a md-button [routerLink]="['#!/group_sponsor']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">accessibility</md-icon>Group about</a>
+           <a md-button [routerLink]="['#!/group_about']" class="flex" (click)="start.close()">
+          <md-icon class="md-24">accessibility</md-icon>Group sponsor</a>
       </md-nav-list>
     </div>
   </md-sidenav>
@@ -39,3 +43,5 @@
   <router-outlet class="layout-column layout-fill" style="padding: 0"></router-outlet>
 
 </md-sidenav-layout>
+
+
