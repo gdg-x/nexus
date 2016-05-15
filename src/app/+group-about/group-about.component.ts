@@ -3,6 +3,9 @@ import { GroupEventsService } from '../group-events.service';
 import { JSONP_PROVIDERS } from '@angular/http';
 import { GEvent } from '../+group-events/gevent';
 import { GAbout } from '../+group-events/gabout';
+import { MdToolbar } from '@angular2-material/toolbar';
+import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
+
 
 
 @Component({
@@ -10,7 +13,8 @@ import { GAbout } from '../+group-events/gabout';
   selector: 'app-group-about',
   templateUrl: 'group-about.component.html',
   styleUrls: ['group-about.component.css'],
-  providers: [JSONP_PROVIDERS]
+  providers: [JSONP_PROVIDERS],
+  directives: [MdToolbar, MD_CARD_DIRECTIVES]
 })
 export class GroupAboutComponent implements OnInit {
   

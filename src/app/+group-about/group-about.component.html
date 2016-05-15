@@ -1,17 +1,32 @@
 <div class="layout-row layout-align-center-center layout-fill layout-wrap">
-  <md-toolbar style="height: 300px; margin-bottom: 16px; background: #1E88E5; color: white;"
+  <md-toolbar style="height: 300px; background: #1E88E5; color: white;"
               class="layout-row layout-align-center-center flex-100">
-    <span style="font-size: 36px">Welcome to the global  Community</span>
+             <div> <i class="material-icons">people</i>&nbsp;</div>
+    <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
-  <div class="layout-column layout-align-center-center layout-wrap" style="margin: 48px 0 128px 0;">
+  
+    <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C; color: white;"
+              class="layout-row layout-align-center-center flex-100">
+    <nav>
+      <ul>
+        <li>EVENTS</li>
+        <li>SPONSORS</li>
+        <li>ABOUT</li>
+      </ul>
+     </nav>
+  </md-toolbar>
+    <div class="layout-column layout-align-center-center">
+ 
 
-  </div>
-  <div>
-    <ul>
-   
-    </ul>
+   <md-card *ngFor="let gabout of gabouts" class="flex-50" > 
+     <md-card-content>
+   <div [innerHTML]= gabout.description></div>
+    </md-card-content>
+  </md-card>
+
+    
+    </div>
 
 </div>
 
-</div>
 
