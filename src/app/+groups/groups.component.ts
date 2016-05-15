@@ -30,7 +30,8 @@ import { Topic } from '../topic';
     ChapterMapComponent
   ],
   providers: [
-    MdIconRegistry
+    MdIconRegistry,
+    MeetupService
   ]
 })
 @Routes([
@@ -45,6 +46,7 @@ export class GroupsComponent implements OnInit {
   mapMarkers: MapMarker;
   topic: Topic;
   errorMessage: string;
+  urlname: string;
   
   zoom: number = 2;
   lat: number = 23.5000002;
