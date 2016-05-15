@@ -5,12 +5,13 @@
 const map: any = {
   'firebase': 'vendor/firebase/lib/firebase-web.js',
   'angularfire2': 'vendor/angularfire2',
-  '@angular2-material': 'vendor/@angular2-material'
+  '@angular2-material': 'vendor/@angular2-material',
+  'angular2-google-maps': 'vendor/angular2-google-maps'
 };
 
 /** User packages configuration. */
 const packages: any = {
-  angularfire2: {
+  'angularfire2': {
     defaultExtension: 'js',
     main: 'angularfire2.js'
   },
@@ -53,6 +54,10 @@ const packages: any = {
     format: 'cjs',
     defaultExtension: 'js',
     main: 'progress-circle.js'
+  },
+  'angular2-google-maps': {
+    defaultExtension: 'js',
+    main: 'core.js'
   }
 };
 
@@ -81,6 +86,7 @@ const barrels: string[] = [
   'app/+goals',
   'app/+benefits',
   'app/+conduct',
+  'app/chapter-map',
   /** @cli-barrel */
 ];
 

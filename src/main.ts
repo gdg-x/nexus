@@ -4,6 +4,7 @@ import { ROUTER_PROVIDERS } from '@angular/router';
 import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NexusAppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase, firebaseAuthConfig, AuthMethods, AuthProviders } from 'angularfire2';
+import { ANGULAR2_GOOGLE_MAPS_PROVIDERS } from 'angular2-google-maps/core';
 
 if (environment.production) {
   enableProdMode();
@@ -18,6 +19,7 @@ bootstrap(
     firebaseAuthConfig({
       method: AuthMethods.OAuthToken,
       provider: AuthProviders.Google
-    })
+    }),
+    ANGULAR2_GOOGLE_MAPS_PROVIDERS
   ]
 );

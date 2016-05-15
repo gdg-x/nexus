@@ -1,0 +1,11 @@
+.sebm-google-map-container {
+  height: 400px;
+}
+
+.sebm-google-map-container .info-link {
+  text-decoration: none;
+  display: block;
+  padding-bottom: 10px;
+  color: #1976D2;
+  font-weight: bold;
+}
