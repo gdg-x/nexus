@@ -3,6 +3,7 @@ import { Jsonp, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import { environment } from './environment';
 import { Topic } from './topic';
+import { MapMarker } from './map-marker';
 
 @Injectable()
 export class MeetupService {
@@ -17,11 +18,27 @@ export class MeetupService {
       .map(this.extractData)
       .catch(this.handleError);
   }
+  
+  getTopicGroups(topicName: string): Observable<MapMarker> {
+    return this.jsonp.get(this.baseUrl + '2/goups?topic=' + topicName + '&key=' + environment.meetupKey +
+      '&format=json&offset=0&sign=true&photo-host=public&order=id&page=20&desc=false' +
+      '&sig_id=90953272&sig=be90771761c0e0fb85d14b9c39f3c5d772cfb721&callback=JSONP_CALLBACK')
+      .map(this.extractMapData)
+      .catch(this.handleError);
+  }
 
   private extractData(res: Response) {
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Response status: ' + res.status);
     }
+    return res.json().results[0] || {};
+  }
+
+  private extractMapData(res: Response) {
+    if (res.status < 200 || res.status >= 300) {
+      throw new Error('Response status: ' + res.status);
+    }
+  console.log('results:', res.json().results[0]);
     return res.json().results[0] || {};
   }
 

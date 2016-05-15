@@ -3,7 +3,8 @@
   [longitude]="lng"
   [zoom]="zoom"
   [disableDefaultUI]="false"
-  [zoomControl]="true"
+  [zoomControl]="zoomCtrl"
+  [scrollwheel]="scrollwheel"
   (mapClick)="mapClicked($event)">
 
   <sebm-google-map-marker

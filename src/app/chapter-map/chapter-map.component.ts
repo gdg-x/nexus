@@ -23,6 +23,8 @@ export class ChapterMapComponent implements OnInit {
   @Input() lat = 23.5000002;
   @Input() lng = 7.9990339;
   @Input() markers = [];
+  @Input() zoomCtrl = true;
+  @Input() scrollwheel = true;
   
   constructor() {}
 

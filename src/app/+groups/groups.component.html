@@ -2,10 +2,12 @@
   Groups
 </h2>
 <div class="layout-row layout-fill layout-align-center-center">
-  <app-chapter-map class="flex-90"
+  <app-chapter-map class="flex-70"
     [lat]="lat"
     [lng]="lng"
     [zoom]="zoom"
-    [markers]="markers">
+    [markers]="markers"
+    [zoomCtrl]="zoomCtrl"
+    [scrollwheel]="scrollwheel">
   </app-chapter-map>
 </div>
