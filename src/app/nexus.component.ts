@@ -11,7 +11,6 @@ import { GroupsComponent } from './+groups';
 import { GoalsComponent } from './+goals';
 import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
-import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 import { GroupEventsComponent } from './+group-events';
 import { GroupEventsService } from './group-events.service';
 import { UsersService } from './users.service';
@@ -56,5 +55,4 @@ export class NexusAppComponent implements OnInit {
       this.router.navigate([window.location.hash]);
     }
   }
-
 }

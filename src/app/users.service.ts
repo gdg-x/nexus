@@ -3,10 +3,9 @@ import { AngularFire, AuthProviders, AuthMethods } from 'angularfire2';
 
 @Injectable()
 export class UsersService {
+  isLoggedIn = <boolean>(false);
 
   constructor(public af: AngularFire) {}
-
-  isLoggedIn = <boolean>(false);
 
   login() {
     this.af.auth.login({
@@ -27,9 +26,8 @@ export class UsersService {
     });
   }
 
-  logout(){
+  logout() {
     this.af.auth.logout();
     this.isLoggedIn = false;
   }
-
 }
