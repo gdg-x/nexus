@@ -52,10 +52,20 @@ export class NexusAppComponent implements OnInit {
     this.af.auth.login({
       provider: AuthProviders.Google,
       method: AuthMethods.Popup,
-    }).then(function(result){
-      // here as placeholder; need to do something with the info
-      console.log(result);
+    }).then((authData) => {
+      console.log(authData);
+
+      // adding the authData to Firebase
+      const itemObservable = this.af.database.object('/users');
+      itemObservable.set({ provider: authData.auth['provider'],
+              image: authData.google['profileImageURL'],
+              name: authData.google['displayName'],
+              token : authData.google['accessToken']});
     });
+  }
+
+  addUser(authData){
+
   }
 
 }
