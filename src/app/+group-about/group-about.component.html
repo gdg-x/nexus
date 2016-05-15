@@ -5,15 +5,17 @@
     <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
   
-    <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C; color: white;"
-              class="layout-row layout-align-center-center flex-100">
-    <nav>
-      <ul>
-        <li>EVENTS</li>
-        <li>SPONSORS</li>
-        <li>ABOUT</li>
-      </ul>
-     </nav>
+  <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
+            class="layout-row layout-align-center-center flex-100">
+    <button md-raised-button (click)="navigateTo('events')">
+      EVENTS
+    </button>
+    <button md-raised-button>
+      SPONSORS
+    </button>
+    <button md-raised-button>
+      ABOUT
+    </button>
   </md-toolbar>
     <div class="layout-column layout-align-center-center">
  
