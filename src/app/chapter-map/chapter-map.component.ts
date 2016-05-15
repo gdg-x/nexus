@@ -22,8 +22,8 @@ export class ChapterMapComponent implements OnInit {
   ngOnInit() {}
 
   public navigate(path: string) {
-    console.log('Navigating to ' + `#!/groups/${path}`);
-    this.router.navigate(['#!/groups', path]);
+    console.log('Navigating to ' + `#!/group/${path}`);
+    this.router.navigate(['#!/group', path]);
   }
 
   clickedMarker(label: string, index: number) {}
