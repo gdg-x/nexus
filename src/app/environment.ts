@@ -11,5 +11,12 @@ export const environment = {
     A meetup can take many forms -- from just a few people getting together to watch the latest video or working on
     getting started tutorials, to large gatherings with demos and tech talks, to events like design sprints and
     hackathons. However, at the core, our meetups are focused on web developers and technical content.
-  `
+  `,
+  promo: {
+    title: 'Announcing AngularCamp 2016',
+    url: 'http://angularcamp.org/',
+    description: `Full-day of workshops, hands-on experience, hacking and debugging.
+    Come and tame your favourite technology! Join us July 1st-3rd, 2016 in Barcelona, Spain. #AngularCamp`,
+    imageUrl: 'https://pbs.twimg.com/media/Cfg4x79W8AAFdAC.jpg'
+  }
 };
