@@ -7,12 +7,18 @@
 
   </div>
   <div>
-    <ul>
-     <li *ngFor="let gabout of gabouts">
-       {{gabout.description}}
-     
-     </li>
+    <div *ngFor="let gabout of gabouts">
+    {{gabout.name}}  
     
-    </ul>
+     <div *ngFor="let gsponsor of gabout.sponsors">
+       {{gsponsor.name}} 
+       <br>{{gsponsor.details}} 
+       <br><img src={{gsponsor.image_url}} />
+       {{gsponsor.info}}
+       <a href={{gsponsor.url}}>{{gsponsor.url}}</a>
+       
+     </div>
+    
+    </div>
   </div>
 </div>
