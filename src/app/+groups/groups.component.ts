@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { ChapterMapComponent } from '../chapter-map';
 import { Router, Routes, ROUTER_DIRECTIVES, OnActivate, RouteSegment } from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -10,6 +9,11 @@ import { GroupEventsComponent } from '../+group-events';
 import { GroupComponent } from '../+group';
 import { GroupBlogComponent } from '../+group/+blog/group-blog.component';
 import { GroupSponsorsComponent } from '../+group/+sponsors/group-sponsors.component';
+import { ChapterMapComponent } from '../chapter-map';
+import { MapMarker } from '../map-marker';
+import { MeetupService } from '../meetup.service';
+import { environment } from '../environment';
+import { Topic } from '../topic';
 
 @Component({
   moduleId: module.id,
@@ -17,7 +21,6 @@ import { GroupSponsorsComponent } from '../+group/+sponsors/group-sponsors.compo
   templateUrl: 'groups.component.html',
   styleUrls: ['groups.component.css'],
   directives: [
-    ROUTER_DIRECTIVES,
     MdButton,
     MdIcon,
     MD_SIDENAV_DIRECTIVES,
@@ -26,53 +29,51 @@ import { GroupSponsorsComponent } from '../+group/+sponsors/group-sponsors.compo
     ChapterMapComponent
   ],
   providers: [
-    MdIconRegistry
+    MdIconRegistry,
+    MeetupService
   ]
 })
-@Routes([
-  {path: '/:urlname', component: GroupComponent},
-  {path: '/:urlname', component: GroupComponent},
-  {path: '/:urlname/events', component: GroupEventsComponent},
-  {path: '/:urlname/blog', component: GroupBlogComponent},
-  {path: '/:urlname/sponsors', component: GroupSponsorsComponent}
-])
-export class GroupsComponent implements OnInit, OnActivate {
-  public zoom: number = 2;
-  public lat: number = 23.5000002;
-  public lng: number = 7.9990339;
-  urlname: string;
+export class GroupsComponent implements OnInit {
+  meetupService: MeetupService;
+  mapMarkers: MapMarker;
+  topic: Topic;
+  errorMessage: string;
+  
+  zoom: number = 2;
+  lat: number = 23.5000002;
+  lng: number = 7.9990339;
+  scrollwheel: boolean = false;
 
-  constructor(private router: Router) {}
-
-  routerOnActivate(curr: RouteSegment): void {
-    this.urlname = curr.getParam('urlname');
+  constructor(meetupService: MeetupService, private router: Router) {
+    this.meetupService = meetupService;
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getTopic();
+    this.getTopicGroups();
+  }
 
-  /**
-   * Array of groups goes here using the below model
-   * @type {{lat: number, lng: number, info: {chapter: string, link: string, city: string, country: string,
-   *         urlname: string}}[]}
-   */
-  markers: Marker[] = [{
-    lat: 38.9536,
-    lng: -94.7336,
-    info: {
-      chapter: 'GDG Kansas City',
-      link: 'http://www.meetup.com/GDG-Kansas-City/',
-      city: 'Kansas City',
-      country: 'USA',
-      urlname: 'GDG-Kansas-City'
-    }
-  }];
-}
+  getTopic() {
+    this.meetupService.getTopicDetails(environment.topicName)
+    .subscribe(
+      result => {
+        this.topic = <Topic>result;
+      },
+      error => {
+        this.errorMessage = <any>error;
+      }
+    );
+  }
 
-// just an interface for type safety.
-interface Marker {
-  lat: number;
-  lng: number;
-  label?: string;
-  draggable?: boolean;
-  info?: any;
+  getTopicGroups() {
+    this.meetupService.getGroups(environment.topicName)
+    .subscribe(
+      result => {
+        this.mapMarkers = <MapMarker>result;
+      },
+      error => {
+        this.errorMessage = <any>error;
+      }
+    );
+  }
 }

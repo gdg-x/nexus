@@ -16,14 +16,16 @@ export class ChapterMapComponent implements OnInit {
   @Input() lat = 23.5000002;
   @Input() lng = 7.9990339;
   @Input() markers = [];
+  @Input() zoomCtrl = true;
+  @Input() scrollwheel = true;
 
   constructor(private router: Router) {}
 
   ngOnInit() {}
 
   public navigate(path: string) {
-    console.log('Navigating to ' + `#!/groups/${path}`);
-    this.router.navigate(['#!/groups', path]);
+    console.log('Navigating to ' + `#!/group/${path}`);
+    this.router.navigate(['#!/group', path]);
   }
 
   clickedMarker(label: string, index: number) {}

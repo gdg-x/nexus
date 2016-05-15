@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HTTP_PROVIDERS, JSONP_PROVIDERS } from '@angular/http';
 import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -8,6 +7,7 @@ import { MdToolbar } from '@angular2-material/toolbar';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 import { AboutComponent } from './+about';
 import { GroupsComponent } from './+groups';
+import { GroupComponent } from './+group';
 import { GoalsComponent } from './+goals';
 import { BenefitsComponent } from './+benefits';
 import { ConductComponent } from './+conduct';
@@ -41,6 +41,7 @@ import { UsersService } from './users.service';
 @Routes([
   {path: '#!/about', component: AboutComponent},
   {path: '#!/groups', component: GroupsComponent},
+  {path: '#!/group', component: GroupComponent},
   {path: '#!/goals', component: GoalsComponent},
   {path: '#!/benefits', component: BenefitsComponent},
   {path: '#!/conduct', component: ConductComponent},
