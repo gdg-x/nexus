@@ -7,7 +7,7 @@
               class="layout-row layout-align-center-center flex-100">
     <span style="font-size: 36px">Welcome to the global {{ topic.name }} Community</span>
   </md-toolbar>
-  <div class="layout-column layout-align-center-center layout-wrap" style="margin: 48px 0 128px 0;">
+  <div class="layout-column layout-align-center-center flex-100" style="margin: 48px 0 48px 0;">
     <span id="about-community">About the Community</span>
     <p id="description">
       {{ topic.description }}
@@ -15,6 +15,19 @@
     <p id="members">
       There are currently {{ topic.members }} members in our global community of meetups!
     </p>
+  </div>
+  <div *ngIf="promo" id="promo-container" class="layout-column flex-100" style="margin: 48px 0 64px 0;">
+    <md-toolbar style="height: 800px; margin-bottom: 16px; background: #1E88E5; color: white;"
+              class="flex-100" id="promo-toolbar">
+      <div id="promo-content" class="layout-column layout-align-center-center flex-100">
+        <span id="promo-title">{{ promo.title }}</span>
+        <a href="{{ promo.url }}" target="_blank"><img id="promo-image" src="{{ promo.imageUrl }}"></a>
+        <p id="promo-description">
+          {{ promo.description }}
+        </p>
+        <a md-raised-button id="promo-button" href="{{ promo.url }}" target="_blank">Learn More</a>
+      </div>
+    </md-toolbar>
   </div>
   <md-card>
     <a href="{{ topic.link }}" target="_blank">
