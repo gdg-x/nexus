@@ -1,11 +1,20 @@
-<h2 style="padding-left: 16px;">
-  Groups
-</h2>
+
 <div class="layout-row layout-fill layout-align-center-center">
-  <app-chapter-map class="flex-90"
+  <app-chapter-map class="flex-70"
     [lat]="lat"
     [lng]="lng"
     [zoom]="zoom"
-    [markers]="markers">
+    [markers]="mapMarkers"
+    [zoomCtrl]="zoomCtrl"
+    [scrollwheel]="scrollwheel">
   </app-chapter-map>
+</div>
+
+<div class="layout-column layout-fill layout-align-center-center">
+  <h2 *ngIf="topic" style="padding-left: 16px; margin-top: 0">
+    Global {{ topic.name }} Community
+  </h2>
+  <div *ngFor="let group of mapMarkers; let i = index">
+    <a href="#!/groups/{{ group.link }}">{{ group.chapter }}</a>
+  </div>
 </div>
