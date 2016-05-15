@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
 import { GEvent } from './gevent';
-import { JSONP_PROVIDERS } from '@angular/http';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { EventFilter } from '../event-filter.pipe';
 import { GAbout } from '../+group-events/gabout';
+import { MeetupService } from '../meetup.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-group-events',
   templateUrl: 'group-events.component.html',
   styleUrls: ['group-events.component.css'],
-  providers: [JSONP_PROVIDERS],
+  providers: [MeetupService],
   directives: [MD_CARD_DIRECTIVES],
   pipes: [EventFilter]
 })
@@ -20,7 +21,9 @@ export class GroupEventsComponent implements OnInit {
   gevents: GEvent[];
   gabouts: GAbout[];
 
-  constructor(private eventService: GroupEventsService) {}
+  constructor(private meetupService: MeetupService,
+              private eventService: GroupEventsService,
+              private router: Router) {}
 
   ngOnInit() {
     this.getEvents();
@@ -39,5 +42,9 @@ export class GroupEventsComponent implements OnInit {
     .subscribe(
       gabouts => this.gabouts = gabouts,
       error => this.errorMessage = <any>error);
+  }
+
+  navigate(path: string) {
+    this.router.navigate(['#!/' + path]);
   }
 }
