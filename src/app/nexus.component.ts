@@ -65,11 +65,12 @@ export class NexusAppComponent implements OnInit {
       console.log(authData);
 
       // adding the authData to Firebase
-      const itemObservable = this.af.database.object('/users');
-      itemObservable.set({ provider: authData.auth['provider'],
-              image: authData.google['profileImageURL'],
-              name: authData.google['displayName'],
-              token : authData.google['accessToken']});
+      const itemObservable = this.af.database.list('/users');
+      console.log(itemObservable);
+      itemObservable.push({ provider: authData.auth['provider'],
+        image: authData.google['profileImageURL'],
+        name: authData.google['displayName'],
+        token : authData.google['accessToken'] });
     });
   }
 
