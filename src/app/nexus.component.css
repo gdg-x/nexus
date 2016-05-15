@@ -11,9 +11,6 @@ md-sidenav-layout md-toolbar {
 md-sidenav md-toolbar span {
   padding-left: 8px;
 }
-router-outlet {
-  padding: 15px;
-}
 md-sidenav a {
   text-align: start;
   padding-top: 16px;

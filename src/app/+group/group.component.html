@@ -1,11 +1,22 @@
-<p>
-  Group works!
-</p>
-<ul>
-  <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/events']">Events</a></li>-->
-  <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/blog']">Blog</a></li>-->
-  <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/sponsors']">Sponsors</a></li>-->
-  <li><a (click)="navigate('events')">Events</a></li>
-  <li><a (click)="navigate('blog')">Blog</a></li>
-  <li><a (click)="navigate('sponsors')">Sponsors</a></li>
-</ul>
+<div *ngIf="urlname" class="layout-column layout-fill">
+  <md-toolbar>
+    <span class="flex">{{ urlname }}</span>
+    <button md-button [hidden]="usersService.isLoggedIn" (click)="usersService.login()">Sign In</button>
+    <button md-button [hidden]="!(usersService.isLoggedIn)" (click)="usersService.logout()">Logout</button>
+    <md-toolbar-row>
+      <button md-button (click)="navigate('events')">Events</button>
+      <button md-button (click)="navigate('blog')">Blog</button>
+      <button md-button (click)="navigate('sponsors')">Sponsors</button>
+    </md-toolbar-row>
+  </md-toolbar>
+
+  <router-outlet class="layout-column layout-fill"></router-outlet>
+  <!--<ul>-->
+    <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/events']">Events</a></li>-->
+    <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/blog']">Blog</a></li>-->
+    <!--<li><a [routerLink]="['#!/groups/{{ urlname }}/sponsors']">Sponsors</a></li>-->
+    <!--<li><a (click)="navigate('events')">Events</a></li>-->
+    <!--<li><a (click)="navigate('blog')">Blog</a></li>-->
+    <!--<li><a (click)="navigate('sponsors')">Sponsors</a></li>-->
+  <!--</ul>-->
+</div>
