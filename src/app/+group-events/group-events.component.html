@@ -3,7 +3,7 @@
     <img md-card-image src="https://material.angularjs.org/latest/img/washedout.png">
     <md-card-title>{{gevent.name}}</md-card-title>
     <md-card-content>
-      <div [innerHTML]="gevent.description"></div>
+      <div [innerHTML]="gevent.description | eventFilter"></div>
     </md-card-content>
     <md-card-actions align="end">
       <button md-button>LIKE</button>
