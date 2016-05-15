@@ -31,8 +31,6 @@ import { UsersService } from './users.service';
   ],
   providers: [
     ROUTER_PROVIDERS,
-    JSONP_PROVIDERS,
-    HTTP_PROVIDERS,
     MdIconRegistry,
     GroupEventsService,
     UsersService
