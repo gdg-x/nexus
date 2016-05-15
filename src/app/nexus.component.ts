@@ -29,8 +29,6 @@ import { GroupEventsService } from './group-events.service';
   ],
   providers: [
     ROUTER_PROVIDERS,
-    JSONP_PROVIDERS,
-    HTTP_PROVIDERS,
     MdIconRegistry,
     GroupEventsService
   ]
