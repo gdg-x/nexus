@@ -1,32 +1,28 @@
 <div class="layout-row layout-align-center-center layout-fill layout-wrap">
   <md-toolbar style="height: 300px; background: #1E88E5; color: white;"
               class="layout-row layout-align-center-center flex-100">
-             <div> <i class="material-icons">people</i>&nbsp;</div>
+    <div><i class="material-icons">people</i>&nbsp;</div>
     <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
-  
-    <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C; color: white;"
+  <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
               class="layout-row layout-align-center-center flex-100">
-    <nav>
-      <ul>
-        <li>EVENTS</li>
-        <li>SPONSORS</li>
-        <li>ABOUT</li>
-      </ul>
-     </nav>
+    <button md-raised-button (click)="navigate('group_events')" style="margin: 8px">
+      EVENTS
+    </button>
+    <button md-raised-button (click)="navigate('group_sponsor')" style="margin: 8px">
+      SPONSORS
+    </button>
+    <button md-raised-button (click)="navigate('group_about')" style="margin: 8px">
+      ABOUT
+    </button>
   </md-toolbar>
-    <div class="layout-column layout-align-center-center">
- 
+  <div class="layout-column layout-align-center-center">
 
-   <md-card *ngFor="let gabout of gabouts" class="flex-50" > 
-     <md-card-content>
-   <div [innerHTML]= gabout.description></div>
-    </md-card-content>
-  </md-card>
+    <md-card *ngFor="let gabout of gabouts" class="flex-50">
+      <md-card-content>
+        <div [innerHTML]=gabout.description></div>
+      </md-card-content>
+    </md-card>
 
-    
-    </div>
-
+  </div>
 </div>
-
-

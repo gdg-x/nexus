@@ -17,7 +17,6 @@ import { GroupAboutComponent } from './+group-about';
 import { GroupSponsorComponent } from './+group-sponsor';
 import { UsersService } from './users.service';
 
-
 @Component({
   moduleId: module.id,
   selector: 'nexus-app',

@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MouseEvent, ANGULAR2_GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
 import { Router } from '@angular/router';
+import { MeetupService } from '../meetup.service';
 
 @Component({
   moduleId: module.id,
@@ -19,16 +20,16 @@ export class ChapterMapComponent implements OnInit {
   @Input() zoomCtrl = true;
   @Input() scrollwheel = true;
 
-  constructor(private router: Router) {}
+  constructor(private meetupService: MeetupService, private router: Router) {}
 
   ngOnInit() {}
-
-  public navigate(path: string) {
-    console.log('Navigating to ' + `#!/group/${path}`);
-    this.router.navigate(['#!/group', path]);
-  }
 
   clickedMarker(label: string, index: number) {}
 
   mapClicked($event: MouseEvent) {}
+
+  navigate(path: string) {
+    this.meetupService.setUrlname(path);
+    this.router.navigate(['#!/group_about']);
+  }
 }

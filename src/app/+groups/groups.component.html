@@ -1,4 +1,3 @@
-
 <div class="layout-row layout-fill layout-align-center-center">
   <app-chapter-map class="flex-70"
     [lat]="lat"
@@ -10,11 +9,13 @@
   </app-chapter-map>
 </div>
 
-<div class="layout-column layout-fill layout-align-center-center">
-  <h2 *ngIf="topic" style="padding-left: 16px; margin-top: 0">
+<div *ngIf="topic" class="layout-column layout-fill layout-align-center-center">
+  <h2 style="padding-left: 16px;">
     Global {{ topic.name }} Community
   </h2>
-  <div *ngFor="let group of mapMarkers; let i = index">
-    <a href="#!/group/{{ group.link }}">{{ group.chapter }}</a>
-  </div>
+  <md-nav-list>
+    <md-list-item *ngFor="let group of mapMarkers; let i = index" (click)="navigate(group.link)">
+      {{ group.chapter }}
+    </md-list-item>
+  </md-nav-list>
 </div>
