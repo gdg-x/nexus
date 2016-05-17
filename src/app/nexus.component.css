@@ -26,15 +26,15 @@ md-nav-list md-icon {
   background-color: rgba(195, 0, 47, 0.12);
 }
 #logo {
-  padding-top: 16px;
+  max-height: 64px;
 }
 #title {
   color: white;
-  font-size: 24px;
+  font-size: 22px;
   padding-left: 4px;
   position: relative;
-  left: 0;
-  bottom: 9px;
+  left: -16px;
+  bottom: 24px;
   font-weight: 200;
 }
 [hidden][md-button] {

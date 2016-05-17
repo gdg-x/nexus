@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   meetupKey: '5f3a411056213a5a5b77474034c4c12',
-  topicName: 'angularjs',
+  topicName: 'google-developer-group',
   topicDescription: `Google Developer Groups (GDGs) are for developers who are interested in Google's developer
   technology; everything from the Android, Chrome, Drive, and Google Cloud platforms, to product APIs like the Cast API,
   Maps API, and YouTube API.

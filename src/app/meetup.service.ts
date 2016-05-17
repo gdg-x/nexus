@@ -23,7 +23,7 @@ export class MeetupService {
   constructor(private jsonp: Jsonp) {}
 
   getTopicDetails(topicName: string): Observable<Topic> {
-    return this.jsonp.get(this.baseUrl + 'topics?name=' + topicName + '&key=' + environment.meetupKey +
+    return this.jsonp.get(this.baseUrl + 'topics?topic=' + topicName + '&key=' + environment.meetupKey +
       '&format=json&offset=0&sign=true&photo-host=public&order=members&page=1' +
       '&sig_id=90953272&sig=be90771761c0e0fb85d14b9c39f3c5d772cfb721&callback=JSONP_CALLBACK')
       .map(this.handleTopicData)

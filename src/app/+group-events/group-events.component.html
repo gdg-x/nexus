@@ -18,7 +18,8 @@
   </md-toolbar>
   <div class="layout-row layout-align-center-center layout-wrap layout-margin flex-100">
     <md-card *ngFor="let gevent of gevents" class="flex-gt-md-60">
-      <img md-card-image src="https://angular.io/resources/images/logos/angular2/angular.svg">
+      <img md-card-image
+           src="https://lh4.googleusercontent.com/pRVBaFuv3DiGnWj7x9Z9XzToAMTopbEey1211-9mRUKBCAxVfbsuwQ=w1200-h630-p">
       <md-card-title>{{ gevent.name }}</md-card-title>
       <md-card-content>
         <div [innerHTML]="gevent.description | eventFilter"></div>
