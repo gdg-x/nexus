@@ -55,3 +55,6 @@ md-card {
   top: 360px;
   left: 0;
 }
+#promo-image {
+  max-width: 600px;
+}
