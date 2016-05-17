@@ -12,16 +12,12 @@ export class GroupEventsService {
   constructor(private jsonp: Jsonp) {}
 
   // TODO get groupName from router
-<<<<<<< HEAD
-  private meetupUrl = 'https://api.meetup.com/' + this.groupName + '/events?key=5f3a411056213a5a5b77474034c4c12&photo-host=public&page=20&sig_id=12889940&sig=5fa3afad8cd373b5ce74f2a2b75c75a9526326c6&callback=JSONP_CALLBACK';
-=======
   private meetupUrl = 'https://api.meetup.com/' + this.groupName + '/events' +
                        '?photo-host=public&page=20&sig_id=12889940&key=' + environment.meetupKey +
                        '&sig=af9ff02c67f7b43d1cce0156799398f43842bc56&callback=JSONP_CALLBACK';
->>>>>>> 834d5812fc93bfb6dd4ca1e1f469953f135de85a
-                       
-  private aboutUrl = 'https://api.meetup.com/2/groups?key=' + environment.meetupKey + 
-                    '&offset=0&format=json&group_urlname=' + this.groupName + 
+
+  private aboutUrl = 'https://api.meetup.com/2/groups?key=' + environment.meetupKey +
+                    '&offset=0&format=json&group_urlname=' + this.groupName +
                     '&photo-host=public&page=20&radius=25.0&fields=sponsors&order=id&desc=false' +
                     '&sig_id=12889940&sig=ece277cfc4be272311affb8a8ef00f812181d88a&callback=JSONP_CALLBACK';
 
@@ -30,7 +26,7 @@ export class GroupEventsService {
     .map(this.extractData)
     .catch(this.handleError);
   }
-  
+
   getAbout(): Observable<GAbout[]> {
     return this.jsonp.get(this.aboutUrl)
     .map(this.extractResults)
@@ -46,7 +42,7 @@ export class GroupEventsService {
     return body.data || {};
 
   }
-  
+
   private extractResults(res: Response) {
     if (res.status < 200 || res.status >= 300) {
       throw new Error('Response status: ' + res.status);
