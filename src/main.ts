@@ -6,6 +6,7 @@ import { LocationStrategy, HashLocationStrategy } from '@angular/common';
 import { NexusAppComponent, environment } from './app/';
 import { FIREBASE_PROVIDERS, defaultFirebase, firebaseAuthConfig, AuthMethods, AuthProviders } from 'angularfire2';
 import { ANGULAR2_GOOGLE_MAPS_PROVIDERS } from 'angular2-google-maps/core';
+import { APP_SHELL_RUNTIME_PROVIDERS } from '@angular/app-shell';
 
 if (environment.production) {
   enableProdMode();
@@ -13,10 +14,11 @@ if (environment.production) {
 
 bootstrap(
   NexusAppComponent, [
+    APP_SHELL_RUNTIME_PROVIDERS,
     ROUTER_PROVIDERS,
     JSONP_PROVIDERS,
     HTTP_PROVIDERS,
-    provide(LocationStrategy, {useClass: HashLocationStrategy}),
+    provide(LocationStrategy, { useClass: HashLocationStrategy }),
     FIREBASE_PROVIDERS,
     defaultFirebase('https://gdgnexus.firebaseio.com'),
     firebaseAuthConfig({

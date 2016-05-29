@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { APP_SHELL_DIRECTIVES } from '@angular/app-shell';
 import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
@@ -23,6 +24,7 @@ import { UsersService } from './users.service';
   templateUrl: 'nexus.component.html',
   styleUrls: ['nexus.component.css'],
   directives: [
+    APP_SHELL_DIRECTIVES,
     ROUTER_DIRECTIVES,
     MdButton,
     MdIcon,
