@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router-deprecated';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MdButton } from '@angular2-material/button';
@@ -72,6 +72,6 @@ export class GroupsComponent implements OnInit {
 
   navigate(path: string) {
     this.meetupService.setUrlname(path);
-    this.router.navigate(['#!/group_about']);
+    this.router.navigate(['Group About']);
   }
 }

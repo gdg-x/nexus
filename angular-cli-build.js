@@ -7,15 +7,15 @@ module.exports = function(defaults) {
     vendorNpmFiles: [
       'systemjs/dist/system-polyfills.js',
       'systemjs/dist/system.src.js',
-      'zone.js/dist/*.js',
+      'zone.js/dist/**/*.+(js|js.map)',
       'es6-shim/es6-shim.js',
-      'reflect-metadata/*.js',
-      'rxjs/**/*.js',
-      '@angular/**/*.js',
-      '@angular2-material/**/*.js',
-      'angularfire2/**/*.js',
-      'firebase/lib/*.js',
-      'angular2-google-maps/**/*.js'
+      'reflect-metadata/**/*.+(ts|js|js.map)',
+      'rxjs/**/*.+(js|js.map)',
+      '@angular/**/*.+(js|js.map)',
+      'firebase/*.+(js|css|map)',
+      'angularfire2/**/*.+(js|css|js.map)',
+      'angular2-google-maps/**/*.+(js|css|js.map)',
+      '@angular2-material/**/*.+(js|css|js.map)'
     ]
   });
 };

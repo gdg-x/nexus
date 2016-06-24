@@ -3,7 +3,7 @@
  **********************************************************************************************/
 /** Map relative paths to URLs. */
 const map: any = {
-  'firebase': 'vendor/firebase/lib/firebase-web.js',
+  'firebase': 'vendor/firebase/firebase.js',
   'angularfire2': 'vendor/angularfire2',
   '@angular2-material': 'vendor/@angular2-material',
   'angular2-google-maps': 'vendor/angular2-google-maps'
@@ -55,10 +55,10 @@ const packages: any = {
     defaultExtension: 'js',
     main: 'progress-circle.js'
   },
-  'angular2-google-maps': {
+  'angular2-google-maps/core': {
     defaultExtension: 'js',
-    main: 'core.js'
-  }
+    main: 'core.umd.js'
+  },
 };
 
 ////////////////////////////////////////////////////////////////////////////////////////////////
@@ -71,7 +71,7 @@ const barrels: string[] = [
   '@angular/common',
   '@angular/compiler',
   '@angular/http',
-  '@angular/router',
+  '@angular/router-deprecated',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
 

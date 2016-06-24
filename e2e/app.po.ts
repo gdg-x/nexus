@@ -4,6 +4,6 @@ export class NexusPage {
   }
 
   getParagraphText() {
-    return element(by.css('nexus-app h1')).getText();
+    return element(by.css('app-root h1')).getText();
   }
 }

@@ -1,2 +1,2 @@
 export {environment} from './environment';
-export {NexusAppComponent} from './nexus.component';
+export {AppComponent} from './app.component';

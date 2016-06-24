@@ -1,6 +1,6 @@
 import { NexusPage } from './app.po';
 
-describe('nexus App', function() {
+describe('webapp App', function() {
   let page: NexusPage;
 
   beforeEach(() => {
@@ -9,6 +9,6 @@ describe('nexus App', function() {
 
   it('should display message saying app works', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('nexus works!');
+    expect(page.getParagraphText()).toEqual('app works!');
   });
 });

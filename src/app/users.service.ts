@@ -10,7 +10,7 @@ export class UsersService {
   login() {
     this.af.auth.login({
       provider: AuthProviders.Google,
-      method: AuthMethods.Popup,
+      method: AuthMethods.Popup
     }).then((authData) => {
       console.log(authData);
       this.isLoggedIn = true;

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router-deprecated';
 import { GroupEventsService } from '../group-events.service';
 import { GEvent } from './gevent';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
@@ -45,6 +45,6 @@ export class GroupEventsComponent implements OnInit {
   }
 
   navigate(path: string) {
-    this.router.navigate(['#!/' + path]);
+    this.router.navigate([path]);
   }
 }

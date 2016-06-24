@@ -1,12 +1,12 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MouseEvent, ANGULAR2_GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
-import { Router } from '@angular/router';
+import { MouseEvent, GOOGLE_MAPS_DIRECTIVES } from 'angular2-google-maps/core';
+import { Router } from '@angular/router-deprecated';
 import { MeetupService } from '../meetup.service';
 
 @Component({
   moduleId: module.id,
   selector: 'app-chapter-map',
-  directives: [ANGULAR2_GOOGLE_MAPS_DIRECTIVES],
+  directives: [GOOGLE_MAPS_DIRECTIVES],
   templateUrl: 'chapter-map.component.html',
   styleUrls: ['chapter-map.component.css']
 })
@@ -30,6 +30,6 @@ export class ChapterMapComponent implements OnInit {
 
   navigate(path: string) {
     this.meetupService.setUrlname(path);
-    this.router.navigate(['#!/group_about']);
+    this.router.navigate(['Group About']);
   }
 }

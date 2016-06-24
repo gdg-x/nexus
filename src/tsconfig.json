@@ -1,23 +1,28 @@
 {
+  "buildOnSave": false,
   "compileOnSave": false,
   "compilerOptions": {
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "",
+    "inlineSources": true,
+    "mapRoot": "/",
     "module": "commonjs",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
     "outDir": "../dist/",
+    "removeComments": true,
     "rootDir": ".",
     "sourceMap": true,
-    "target": "es5",
-    "inlineSources": true
+    "target": "es5"
   },
-
   "files": [
     "main.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "node_modules/angularfire2/firebase3.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
   ]
 }

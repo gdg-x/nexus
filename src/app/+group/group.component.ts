@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router-deprecated';
 import { MdButton } from '@angular2-material/button';
 import { MdToolbar } from '@angular2-material/toolbar';
 import { MeetupService } from '../meetup.service';

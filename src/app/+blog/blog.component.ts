@@ -1,8 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
-import { ROUTER_DIRECTIVES } from '@angular/router';
-
-
 
 @Component({
   moduleId: module.id,
@@ -11,12 +8,12 @@ import { ROUTER_DIRECTIVES } from '@angular/router';
   styleUrls: ['blog.component.css']
 })
 export class BlogComponent implements OnInit {
-  
+
   public posts: any[];
   public selectedpost: any;
-  
+
  item: FirebaseObjectObservable<any>;
- 
+
   constructor(af: AngularFire) {
     this.item = af.database.object('/blog');
   }
@@ -30,7 +27,7 @@ export class BlogComponent implements OnInit {
     this.item.remove();
   }
   ngOnInit() {
-    
+
   }
 
 }

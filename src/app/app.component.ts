@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, Routes, ROUTER_DIRECTIVES, ROUTER_PROVIDERS} from '@angular/router';
+import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MdButton } from '@angular2-material/button';
@@ -19,9 +19,9 @@ import { UsersService } from './users.service';
 
 @Component({
   moduleId: module.id,
-  selector: 'nexus-app',
-  templateUrl: 'nexus.component.html',
-  styleUrls: ['nexus.component.css'],
+  selector: 'app-root',
+  templateUrl: 'app.component.html',
+  styleUrls: ['app.component.css'],
   directives: [
     ROUTER_DIRECTIVES,
     MdButton,
@@ -31,31 +31,31 @@ import { UsersService } from './users.service';
     MD_LIST_DIRECTIVES
   ],
   providers: [
-    ROUTER_PROVIDERS,
     MdIconRegistry,
     GroupEventsService,
     UsersService
   ]
 })
-@Routes([
-  {path: '#!/about', component: AboutComponent},
-  {path: '#!/groups', component: GroupsComponent},
-  {path: '#!/group', component: GroupComponent},
-  {path: '#!/goals', component: GoalsComponent},
-  {path: '#!/benefits', component: BenefitsComponent},
-  {path: '#!/conduct', component: ConductComponent},
-  {path: '#!/group_events', component: GroupEventsComponent},
-  {path: '#!/group_about', component: GroupAboutComponent},
-  {path: '#!/group_sponsor', component: GroupSponsorComponent}
+@RouteConfig([
+  {path: '/about', component: AboutComponent, name: 'About', useAsDefault: true},
+  {path: '/groups', component: GroupsComponent, name: 'Groups'},
+  {path: '/group', component: GroupComponent, name: 'Group'},
+  {path: '/goals', component: GoalsComponent, name: 'Goals'},
+  {path: '/benefits', component: BenefitsComponent, name: 'Benefits'},
+  {path: '/conduct', component: ConductComponent, name: 'Conduct'},
+  {path: '/group_events', component: GroupEventsComponent, name: 'Group Events'},
+  {path: '/group_about', component: GroupAboutComponent, name: 'Group About'},
+  {path: '/group_sponsor', component: GroupSponsorComponent, name: 'Group Sponsor'},
+  {path: '/**', redirectTo: ['About']}
 ])
-export class NexusAppComponent implements OnInit {
+export class AppComponent implements OnInit {
   title = 'Nexus';
 
   constructor(mdIconRegistry: MdIconRegistry, private router: Router, private usersService: UsersService) {}
 
   ngOnInit() {
     if (window.location.hash === '') {
-      this.router.navigate(['#!/about']);
+      this.router.navigate(['About']);
     } else {
       this.router.navigate([window.location.hash]);
     }

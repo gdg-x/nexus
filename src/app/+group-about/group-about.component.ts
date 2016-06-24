@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router } from '@angular/router-deprecated';
 import { GroupEventsService } from '../group-events.service';
 import { GAbout } from '../+group-events/gabout';
 import { MdToolbar } from '@angular2-material/toolbar';
@@ -37,6 +37,6 @@ export class GroupAboutComponent implements OnInit {
   }
 
   navigate(path: string) {
-    this.router.navigate(['#!/' + path]);
+    this.router.navigate([path]);
   }
 }

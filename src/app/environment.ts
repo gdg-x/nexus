@@ -3,5 +3,14 @@
 // The build system defaults to the dev environment. Don't add anything to this file.
 
 export const environment = {
-  production: false
+  production: false,
+  meetupKey: undefined,
+  topicName: undefined,
+  topicDescription: undefined,
+  promo: {
+    title: undefined,
+    url: undefined,
+    description: undefined,
+    imageUrl: undefined
+  }
 };
