@@ -7,6 +7,7 @@ export const environment = {
   meetupKey: undefined,
   topicName: undefined,
   topicDescription: undefined,
+  navImageUrl: undefined,
   promo: {
     title: undefined,
     url: undefined,

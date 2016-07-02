@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, RouteConfig, ROUTER_DIRECTIVES } from '@angular/router-deprecated';
+import { environment } from './';
 import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
 import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
 import { MdButton } from '@angular2-material/button';
@@ -50,10 +51,12 @@ import { UsersService } from './users.service';
 ])
 export class AppComponent implements OnInit {
   title = 'Nexus';
+  navImageUrl: string;
 
   constructor(mdIconRegistry: MdIconRegistry, private router: Router, private usersService: UsersService) {}
 
   ngOnInit() {
+    this.navImageUrl = environment.navImageUrl;
     if (window.location.hash === '') {
       this.router.navigate(['About']);
     } else {
