@@ -6,10 +6,10 @@ import { MdButton } from '@angular2-material/button';
 import { MdToolbar } from '@angular2-material/toolbar';
 import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
 import { ChapterMapComponent } from '../chapter-map';
-import { MapMarker } from '../map-marker';
+import { MapMarker } from '../models/map-marker';
 import { MeetupService } from '../meetup.service';
 import { environment } from '../environment';
-import { Topic } from '../topic';
+import { Topic } from '../models/topic';
 
 @Component({
   moduleId: module.id,
