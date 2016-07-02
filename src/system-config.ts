@@ -5,8 +5,9 @@
 const map: any = {
   'firebase': 'vendor/firebase/firebase.js',
   'angularfire2': 'vendor/angularfire2',
+  'angular2-google-maps': 'vendor/angular2-google-maps',
   '@angular2-material': 'vendor/@angular2-material',
-  'angular2-google-maps': 'vendor/angular2-google-maps'
+  '@vaadin': 'vendor/@vaadin'
 };
 
 /** User packages configuration. */
@@ -14,6 +15,10 @@ const packages: any = {
   'angularfire2': {
     defaultExtension: 'js',
     main: 'angularfire2.js'
+  },
+  '@vaadin/angular2-polymer': {
+    defaultExtension: 'js',
+    main: 'index.js'
   },
   '@angular2-material/core': {
     format: 'cjs',
@@ -71,6 +76,8 @@ const barrels: string[] = [
   '@angular/common',
   '@angular/compiler',
   '@angular/http',
+  '@angular/forms',
+  '@angular/router',
   '@angular/router-deprecated',
   '@angular/platform-browser',
   '@angular/platform-browser-dynamic',
