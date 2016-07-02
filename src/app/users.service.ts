@@ -7,6 +7,11 @@ export class UsersService {
 
   constructor(public af: AngularFire) {}
 
+  logout() {
+    this.af.auth.logout();
+    this.isLoggedIn = false;
+  }
+
   login() {
     this.af.auth.login({
       provider: AuthProviders.Google,
@@ -24,10 +29,5 @@ export class UsersService {
         token: authData.google['accessToken'],
         uid: authData['uid']});
     });
-  }
-
-  logout() {
-    this.af.auth.logout();
-    this.isLoggedIn = false;
   }
 }

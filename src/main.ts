@@ -20,10 +20,10 @@ bootstrap(
     {provide: LocationStrategy, useClass: HashLocationStrategy},
     GOOGLE_MAPS_PROVIDERS,
     defaultFirebase({
-      apiKey: "AIzaSyBA7EKrK5xT4sLvfEn3Q18hJmduNjQSZLs",
-      authDomain: "gdgnexus.firebaseapp.com",
-      databaseURL: "https://gdgnexus.firebaseio.com",
-      storageBucket: "firebase-gdgnexus.appspot.com"
+      apiKey: "AIzaSyAIy6Ic0sHHFbfyQZtESN9_qeck2umaq88",
+      authDomain: "angular-nexus.firebaseapp.com",
+      databaseURL: "https://angular-nexus.firebaseio.com",
+      storageBucket: "angular-nexus.appspot.com"
     }),
     firebaseAuthConfig({
       provider: AuthProviders.Google,
