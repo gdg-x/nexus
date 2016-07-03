@@ -24,7 +24,7 @@ GDG[x] Nexus
 * TBA
 
 ###Contributors
-See [list of contributors](https://github.com/gdg-x/hub/graphs/contributors)
+See [list of contributors](https://github.com/gdg-x/nexus/graphs/contributors)
 
 Maintainer: [@splaktar](https://github.com/splaktar).
 
