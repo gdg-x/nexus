@@ -30,13 +30,18 @@
 <body class="layout-column layout-fill">
   <app-root class="layout-column layout-fill">Loading Angular Nexus...</app-root>
 
+  <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
+  <link rel="import" href="elements.html">
+
   {{#each scripts.polyfills}}
   <script src="{{.}}"></script>
   {{/each}}
   <script>
-    System.import('system-config.js').then(function() {
-      System.import('main');
-    }).catch(console.error.bind(console));
+    document.addEventListener('WebComponentsReady', function() {
+      System.import('system-config.js').then(function() {
+        System.import('main');
+      }).catch(console.error.bind(console));
+    }
   </script>
 </body>
 </html>
