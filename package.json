@@ -44,7 +44,7 @@
     "zone.js": "0.6.12"
   },
   "devDependencies": {
-    "angular-cli": "git@github.com:DevIntent/angular-cli.git",
+    "angular-cli": "https://github.com/DevIntent/angular-cli.git",
     "codelyzer": "0.0.23",
     "ember-cli-inject-live-reload": "1.4.0",
     "jasmine-core": "2.4.1",
