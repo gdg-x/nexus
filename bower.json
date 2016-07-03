@@ -5,12 +5,13 @@
   "authors": [
     "Michael Prentice <splaktar@gmail.com>"
   ],
-  "license": "UNLICENSED",
+  "license": "MIT",
   "keywords": [
     "angular2",
-    "angularfire2"
+    "angularfire2",
+    "angular2-polymer"
   ],
-  "homepage": "http://trooforeclosure.com/",
+  "homepage": "https://angular-nexus.firebaseapp.com",
   "private": true,
   "ignore": [
     "**/.*",
@@ -22,6 +23,6 @@
   ],
   "dependencies": {
     "paper-elements": "1.0.7",
-    "vaadin-grid": "1.1.0-beta4"
+    "vaadin-grid": "1.1.0"
   }
 }
