@@ -5,13 +5,13 @@
   "authors": [
     "Michael Prentice <splaktar@gmail.com>"
   ],
-  "license": "MIT",
+  "license": "Apache-2.0",
   "keywords": [
     "angular2",
     "angularfire2",
     "angular2-polymer"
   ],
-  "homepage": "https://angular-nexus.firebaseapp.com",
+  "homepage": "https://gdg-nexus.firebaseapp.com",
   "private": true,
   "ignore": [
     "**/.*",

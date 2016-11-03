@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Response, Jsonp } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { GEvent } from './+group-events/gevent';
-import { GAbout } from './+group-events/gabout';
-import { environment } from './environment';
+import { GEvent, GAbout } from './models';
+import { environment } from '../environments/environment';
 
 @Injectable()
 export class GroupEventsService {

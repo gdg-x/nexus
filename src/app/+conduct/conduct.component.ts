@@ -1,18 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { MdToolbar } from '@angular2-material/toolbar';
 import { MeetupService } from '../meetup.service';
-import { environment } from '../environment';
-import { Topic } from '../models/topic';
+import { environment } from '../../environments/environment';
+import { Topic } from '../models';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-conduct',
   templateUrl: 'conduct.component.html',
-  styleUrls: ['conduct.component.css'],
-  directives: [
-    MdToolbar
-  ],
-  providers: [MeetupService]
+  styleUrls: ['conduct.component.scss']
 })
 export class ConductComponent implements OnInit {
   topic: Topic;

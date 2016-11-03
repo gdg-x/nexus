@@ -1,21 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
-import { MdButton } from '@angular2-material/button';
-import { MdToolbar } from '@angular2-material/toolbar';
+import { Router } from '@angular/router';
 import { MeetupService } from '../meetup.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-group',
   templateUrl: 'group.component.html',
-  styleUrls: ['group.component.css'],
-  directives: [
-    MdButton,
-    MdToolbar
-  ],
-  providers: [
-    MeetupService
-  ]
+  styleUrls: ['group.component.scss']
 })
 export class GroupComponent implements OnInit {
   urlname: string;

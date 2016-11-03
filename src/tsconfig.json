@@ -5,24 +5,25 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "inlineSources": true,
-    "mapRoot": "/",
-    "module": "commonjs",
+    "mapRoot": "./",
+    "lib": ["es6", "dom"],
+    "module": "es6",
     "moduleResolution": "node",
     "noEmitOnError": true,
     "noImplicitAny": false,
-    "outDir": "../dist/",
+    "outDir": "../dist/out-tsc",
     "removeComments": true,
     "rootDir": ".",
     "sourceMap": true,
-    "target": "es5"
+    "target": "es5",
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
   },
-  "files": [
-    "main.ts",
-    "typings.d.ts",
-    "node_modules/angularfire2/firebase3.d.ts"
-  ],
   "exclude": [
     "node_modules"
+  ],
+  "files": [
+    "typings.d.ts"
   ]
 }

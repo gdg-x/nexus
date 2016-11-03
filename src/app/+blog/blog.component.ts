@@ -2,10 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFire, FirebaseObjectObservable } from 'angularfire2';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-blog',
   templateUrl: 'blog.component.html',
-  styleUrls: ['blog.component.css']
+  styleUrls: ['blog.component.scss']
 })
 export class BlogComponent implements OnInit {
 
@@ -17,17 +16,18 @@ export class BlogComponent implements OnInit {
   constructor(af: AngularFire) {
     this.item = af.database.object('/blog');
   }
+
   save(newName: string) {
     this.item.set({ name: newName });
   }
+
   update(newName: string) {
     this.item.update({ name: newName  });
   }
+
   delete() {
     this.item.remove();
   }
-  ngOnInit() {
 
-  }
-
+  ngOnInit() {}
 }
