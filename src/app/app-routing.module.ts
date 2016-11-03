@@ -12,14 +12,14 @@ import {GroupSponsorComponent} from './+group-sponsor/group-sponsor.component';
 
 const routes: Routes = [
   {path: '', component: AboutComponent},
-  {path: '/groups', component: GroupsComponent},
-  {path: '/goals', component: GoalsComponent},
-  {path: '/benefits', component: BenefitsComponent},
-  {path: '/conduct', component: ConductComponent},
-  {path: '/group', component: GroupComponent},
-  {path: '/group_events', component: GroupEventsComponent},
-  {path: '/group_about', component: GroupAboutComponent},
-  {path: '/group_sponsor', component: GroupSponsorComponent}
+  {path: 'groups', component: GroupsComponent},
+  {path: 'goals', component: GoalsComponent},
+  {path: 'benefits', component: BenefitsComponent},
+  {path: 'conduct', component: ConductComponent},
+  {path: 'group', component: GroupComponent},
+  {path: 'group_events', component: GroupEventsComponent},
+  {path: 'group_about', component: GroupAboutComponent},
+  {path: 'group_sponsor', component: GroupSponsorComponent}
 ];
 
 @NgModule({

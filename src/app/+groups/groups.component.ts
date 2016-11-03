@@ -53,6 +53,6 @@ export class GroupsComponent implements OnInit {
 
   navigate(path: string) {
     this.meetupService.setUrlname(path);
-    this.router.navigate(['Group About']);
+    this.router.navigate(['group_about']);
   }
 }

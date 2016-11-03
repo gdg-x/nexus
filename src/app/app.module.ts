@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule, CUSTOM_ELEMENTS_SCHEMA} from '@angular/core';
 import {HttpModule, JsonpModule} from '@angular/http';
 import {AngularFireModule, AuthProviders, AuthMethods} from 'angularfire2';
-import {PolymerElement} from '@vaadin/angular2-polymer/src/polymer-element';
+import {PolymerElement} from '@vaadin/angular2-polymer';
 import {MaterialModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AgmCoreModule} from 'angular2-google-maps/core';
@@ -26,6 +26,7 @@ import {GroupSponsorComponent} from './+group-sponsor/group-sponsor.component';
 import {GroupEventsComponent} from './+group-events/group-events.component';
 import {GroupAboutComponent} from './+group-about/group-about.component';
 import {ChapterMapComponent} from './chapter-map/chapter-map.component';
+import {GroupComponent} from './+group/group.component';
 
 const firebaseAuthConfig = {
   provider: AuthProviders.Google,
@@ -53,6 +54,7 @@ const firebaseAuthConfig = {
     GroupAboutComponent,
     GroupEventsComponent,
     GroupSponsorComponent,
+    GroupComponent,
     GroupsComponent,
     ChapterMapComponent
   ],

@@ -17,7 +17,7 @@ export const environment = {
   A GDG can take many forms -- from just a few people getting together to watch our latest video, to large gatherings
   with demos and tech talks, to events like code sprints and hackathons. However, at the core, GDGs are focused on
   developers and technical content, and the core audience should be developers.`,
-  navImageUrl: 'https://developers.google.com/_static/d46c07ceea/images/gdg-logo.png',
+  navImageUrl: 'https://developers.google.com/_static/c2c85d7469/images/GDG-program-logo.png',
   promo: {
     title: 'Global GDG Summit 2016',
     url: 'https://sites.google.com/site/gdgorganizersummit/home',
