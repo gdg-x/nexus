@@ -15,7 +15,8 @@ module.exports = function(defaults) {
       'firebase/*.+(js|css|map)',
       'angularfire2/**/*.+(js|css|js.map)',
       'angular2-google-maps/**/*.+(js|css|js.map)',
-      '@angular2-material/**/*.+(js|css|js.map)'
+      '@angular2-material/**/*.+(js|css|js.map)',
+      '@vaadin/**/*.+(js|js.map)'
     ]
   });
 };

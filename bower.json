@@ -1,0 +1,28 @@
+{
+  "name": "nexus",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Michael Prentice <splaktar@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "angular2",
+    "angularfire2",
+    "angular2-polymer"
+  ],
+  "homepage": "https://angular-nexus.firebaseapp.com",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "paper-elements": "1.0.7",
+    "vaadin-grid": "1.1.0"
+  }
+}

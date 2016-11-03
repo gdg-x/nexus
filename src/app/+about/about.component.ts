@@ -5,7 +5,7 @@ import { MdButton } from '@angular2-material/button';
 import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
 import { MeetupService } from '../meetup.service';
 import { environment } from '../environment';
-import { Topic } from '../topic';
+import { Topic } from '../models/topic';
 
 @Component({
   moduleId: module.id,

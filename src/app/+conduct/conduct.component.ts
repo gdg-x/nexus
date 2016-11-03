@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { MdToolbar } from '@angular2-material/toolbar';
 import { MeetupService } from '../meetup.service';
 import { environment } from '../environment';
-import { Topic } from '../topic';
+import { Topic } from '../models/topic';
 
 @Component({
   moduleId: module.id,
