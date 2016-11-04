@@ -1,7 +1,7 @@
 export const environment = {
   production: false,
   meetupKey: '5f3a411056213a5a5b77474034c4c12',
-  googleApiKey: 'AIzaSyBfdxKxNYZB6nA-2xaL8-6agiWzmwAzz2U',
+  googleApiKey: 'AIzaSyDON32vspaLED4CQj1_cfqyV1aFG_1hyzE',
   firebaseConfig: {
     apiKey: 'AIzaSyDON32vspaLED4CQj1_cfqyV1aFG_1hyzE',
     authDomain: 'gdg-nexus.firebaseapp.com',
