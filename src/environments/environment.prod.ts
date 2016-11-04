@@ -1,5 +1,5 @@
 export const environment = {
-  production: false,
+  production: true,
   meetupKey: '5f3a411056213a5a5b77474034c4c12',
   googleApiKey: 'AIzaSyBfdxKxNYZB6nA-2xaL8-6agiWzmwAzz2U',
   firebaseConfig: {
