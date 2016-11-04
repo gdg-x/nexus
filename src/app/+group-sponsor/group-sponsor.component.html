@@ -5,14 +5,14 @@
     <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
   <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
-              class="layout-row layout-align-start-center flex-100">
-    <button md-raised-button (click)="navigate('group_events')" style="margin: 8px">
+              class="layout-row layout-align-center-start flex-100">
+    <button md-raised-button color="primary" (click)="navigate('group_events')" style="margin: 8px">
       EVENTS
     </button>
-    <button md-raised-button (click)="navigate('group_sponsor')" style="margin: 8px">
+    <button md-raised-button color="primary" (click)="navigate('group_sponsor')" style="margin: 8px">
       SPONSORS
     </button>
-    <button md-raised-button (click)="navigate('group_about')" style="margin: 8px">
+    <button md-raised-button color="primary" (click)="navigate('group_about')" style="margin: 8px">
       ABOUT
     </button>
   </md-toolbar>

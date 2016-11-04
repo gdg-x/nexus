@@ -9,6 +9,7 @@ import {AgmCoreModule} from 'angular2-google-maps/core';
 import {SharedModule} from './shared/shared.module';
 
 import {AppRoutingModule} from './app-routing.module';
+import {GlobalStylesComponent} from './shared/global-styles/global-styles.component';
 import {environment} from '../environments/environment';
 import {UsersService} from './users.service';
 import {GroupEventsService} from './group-events.service';
@@ -55,7 +56,8 @@ const firebaseAuthConfig = {
     GroupSponsorComponent,
     GroupComponent,
     GroupsComponent,
-    ChapterMapComponent
+    ChapterMapComponent,
+    GlobalStylesComponent
   ],
   imports: [
     BrowserModule,

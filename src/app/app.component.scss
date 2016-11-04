@@ -5,6 +5,9 @@ md-sidenav md-toolbar {
   padding-left: 8px;
   background: #1976D2;
 }
+.navButton {
+  padding: 0 6px;
+}
 md-sidenav-layout md-toolbar {
   background: #1976D2;
 }
@@ -16,6 +19,9 @@ md-sidenav a {
   padding-top: 16px;
   padding-bottom: 16px;
   color: #3F51B5;
+}
+md-nav-list {
+  display: flex;
 }
 md-nav-list md-icon {
   vertical-align: middle;

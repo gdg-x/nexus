@@ -23,9 +23,6 @@
   margin-top: 32px;
   margin-bottom: 0;
 }
-[md-button] {
-  color: #3F51B5;
-}
 md-card-content > p {
   opacity: 0.7;
 }
@@ -37,6 +34,7 @@ md-card {
 #promo-button {
   color: white;
   background-color: #DD0031;
+  margin-bottom: 32px;
 }
 #promo-title {
   font-size: 36px;
@@ -49,6 +47,7 @@ md-card {
 }
 #promo-container {
   position: relative;
+  margin: 16px 0 64px 0;
 }
 #promo-content {
   position: relative;
