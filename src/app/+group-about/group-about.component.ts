@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
 import { GAbout } from '../models';
 import { MeetupService } from '../meetup.service';
+import {DomSanitizer, SafeHtml} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-group-about',
@@ -11,12 +12,14 @@ import { MeetupService } from '../meetup.service';
 })
 export class GroupAboutComponent implements OnInit {
   errorMessage: string;
-  gabouts: GAbout[];
+  gabout: GAbout;
+  description: SafeHtml;
   urlname: string;
 
   constructor(private meetupService: MeetupService,
               private eventService: GroupEventsService,
-              private router: Router) {}
+              private router: Router,
+              private sanitizer: DomSanitizer) {}
 
   ngOnInit() {
     this.urlname = this.meetupService.getUrlname();
@@ -27,8 +30,12 @@ export class GroupAboutComponent implements OnInit {
   getAbout() {
     this.eventService.getAbout()
     .subscribe(
-      gabouts => this.gabouts = gabouts,
-      error => this.errorMessage = <any>error);
+      gabouts => {
+          this.gabout = gabouts[0];
+          this.description = this.sanitizer.bypassSecurityTrustHtml(this.gabout.description);
+        },
+      error => this.errorMessage = <any>error
+    );
   }
 
   navigate(path: string) {

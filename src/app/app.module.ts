@@ -6,6 +6,7 @@ import {PolymerElement} from '@vaadin/angular2-polymer';
 import {MaterialModule} from '@angular/material';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {AgmCoreModule} from 'angular2-google-maps/core';
+import {SharedModule} from './shared/shared.module';
 
 import {AppRoutingModule} from './app-routing.module';
 import {environment} from '../environments/environment';
@@ -13,7 +14,6 @@ import {UsersService} from './users.service';
 import {GroupEventsService} from './group-events.service';
 import {BlogService} from './blog.service';
 import {MeetupService} from './meetup.service';
-import {EventFilter} from './event-filter.pipe';
 
 import {AppComponent} from './app.component';
 import {AboutComponent} from './+about/about.component';
@@ -45,7 +45,6 @@ const firebaseAuthConfig = {
     PolymerElement('paper-card'),
     PolymerElement('paper-icon-button'),
     PolymerElement('paper-icon-item'),
-    EventFilter,
     AboutComponent,
     BenefitsComponent,
     BlogComponent,
@@ -68,7 +67,8 @@ const firebaseAuthConfig = {
     AngularFireModule.initializeApp(environment.firebaseConfig, firebaseAuthConfig),
     MaterialModule.forRoot(),
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
+    SharedModule
   ],
   providers: [
     UsersService,

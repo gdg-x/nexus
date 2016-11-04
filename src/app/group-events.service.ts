@@ -4,6 +4,10 @@ import { Observable } from 'rxjs/Observable';
 import { GEvent, GAbout } from './models';
 import { environment } from '../environments/environment';
 
+import 'rxjs/add/observable/throw';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
 @Injectable()
 export class GroupEventsService {
   groupName: string = 'GDG-Kansas-City';

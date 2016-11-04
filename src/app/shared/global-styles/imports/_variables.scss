@@ -1,0 +1,45 @@
+/*
+* Sass variables
+*/
+
+// Breakpoints
+$handset: 360px;
+$large-handset: 480px;
+$tablet: 640px; /* app drawer breakpoint */
+$large-tablet: 840px;
+$desktop: 960px;
+$large-desktop: 1280px;
+$x-large-desktop: 1440px;
+$xx-large-desktop: 1920px;
+
+// Fonts
+$roboto: Roboto, 'Helvetica Neue', sans-serif;
+$roboto-slab: 'Roboto Slab', serif;
+
+// Typography
+$base-font-family: $roboto;
+$heading-font-family: $roboto;
+
+// Font Sizes
+$base-font-size: 16px;
+
+// Line height
+$base-line-height: 1.3;
+$heading-line-height: 1;
+
+// Other Sizes
+//$base-border-radius: 3px;
+$base-spacing: 24px;
+$small-spacing: $base-spacing * 0.5;
+
+// Border
+$base-border: 1px solid var(--divider-color);
+
+// Background Colors
+$base-background-color: var(--primary-background-color);
+$secondary-background-color: var(--alt-background-color);
+
+// Animations
+$transition-duration: 500ms;
+$transition-timing: ease;
+$transition-all: all $transition-duration $transition-timing;

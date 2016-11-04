@@ -1,3 +1,4 @@
+<app-global-styles></app-global-styles>
 <md-sidenav-layout class="layout-column layout-fill">
   <md-sidenav #start mode="over" class="layout-column layout-fill">
     <md-toolbar color="primary">
@@ -31,10 +32,10 @@
         <span id="title">{{ title }}</span>
       </a>
     </div>
-    <button md-button *ngIf="!usersService.isLoggedIn" (click)="usersService.login()">Sign In</button>
-    <button md-button *ngIf="usersService.isLoggedIn" (click)="usersService.logout()">Logout</button>
+    <button md-button color="accent" *ngIf="!usersService.isLoggedIn" (click)="usersService.login()">Sign In</button>
+    <button md-button color="accent" *ngIf="usersService.isLoggedIn" (click)="usersService.logout()">Logout</button>
   </md-toolbar>
 
-  <router-outlet class="layout-column layout-fill"></router-outlet>
+  <router-outlet></router-outlet>
 
 </md-sidenav-layout>
