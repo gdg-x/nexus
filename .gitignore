@@ -3,6 +3,7 @@
 # compiled output
 dist/
 tmp/
+elements.vulcanized.html
 
 # dependencies
 node_modules/
