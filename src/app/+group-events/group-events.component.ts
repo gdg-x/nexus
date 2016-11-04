@@ -13,10 +13,13 @@ export class GroupEventsComponent implements OnInit {
   errorMessage: string;
   gevents: GEvent[];
   gabouts: GAbout[];
+  imageUrl: string;
 
   constructor(private meetupService: MeetupService,
               private eventService: GroupEventsService,
-              private router: Router) {}
+              private router: Router) {
+    this.imageUrl = 'https://lh4.googleusercontent.com/pRVBaFuv3DiGnWj7x9Z9XzToAMTopbEey1211-9mRUKBCAxVfbsuwQ=w1200-h400-p';
+  }
 
   ngOnInit() {
     this.getEvents();

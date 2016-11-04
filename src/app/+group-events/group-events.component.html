@@ -5,7 +5,7 @@
     <h1 *ngFor="let gname of gabouts"> {{gname.name}} </h1>
   </md-toolbar>
   <md-toolbar style="height: 50px; margin-bottom: 16px; background: #B71C1C;"
-              class="layout-row layout-align-center-start flex-100">
+              class="layout-row layout-align-start-center flex-100">
     <button md-raised-button (click)="navigate('group_events')" style="margin: 8px">
       EVENTS
     </button>
@@ -18,8 +18,7 @@
   </md-toolbar>
   <div class="layout-row layout-align-center-start layout-wrap layout-margin flex-100">
     <md-card *ngFor="let gevent of gevents" class="flex-gt-md-60">
-      <img md-card-image
-           src="https://lh4.googleusercontent.com/pRVBaFuv3DiGnWj7x9Z9XzToAMTopbEey1211-9mRUKBCAxVfbsuwQ=w1200-h630-p">
+      <img md-card-image src="{{ imageUrl }}">
       <md-card-title>{{ gevent.name }}</md-card-title>
       <md-card-content>
         <div [innerHTML]="gevent.description | eventFilter"></div>
