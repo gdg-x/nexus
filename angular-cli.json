@@ -16,6 +16,8 @@
       "assets": [
         "assets",
         "elements.html",
+        "elements.vulcanized.html",
+        "app-theme.html",
         "404.html",
         "favicon.ico",
         "manifest.webapp"
