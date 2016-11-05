@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {AngularFire, AuthProviders, AuthMethods, FirebaseAuthState, FirebaseObjectObservable} from 'angularfire2';
+import { AngularFire, FirebaseAuthState, FirebaseObjectObservable } from 'angularfire2';
 import { User } from './models';
 import { Router } from '@angular/router';
 
@@ -24,10 +24,7 @@ export class UsersService {
   }
 
   login() {
-    this.af.auth.login({
-      provider: AuthProviders.Google,
-      method: AuthMethods.Popup
-    });
+    this.af.auth.login();
   }
 
   private setCurrentLoggedInUser(authState: FirebaseAuthState) {
