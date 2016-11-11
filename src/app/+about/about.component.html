@@ -2,7 +2,7 @@
   <md-toolbar class="hero-toolbar"></md-toolbar>
   <md-progress-circle mode="indeterminate" color="warn" class="flex-30"></md-progress-circle>
 </div>
-<div *ngIf="topic" class="layout-row layout-align-center-center layout-fill layout-wrap">
+<div *ngIf="topic" class="layout-row layout-fill layout-align-center-start layout-wrap">
   <md-toolbar style="height: 300px; margin-bottom: 16px; background: #1E88E5; color: white;"
               class="layout-row layout-align-center-center flex-100">
     <span style="font-size: 36px">Welcome to the global {{ topic.name }} Community</span>
@@ -16,9 +16,8 @@
       There are currently {{ topic.members }} members in our global community of meetups!
     </p>
   </div>
-  <div *ngIf="promo" id="promo-container" class="layout-column flex-100" style="margin: 16px 0 64px 0;">
-    <md-toolbar style="height: 800px; margin-bottom: 16px; background: #1E88E5; color: white;"
-              class="flex-100" id="promo-toolbar">
+  <div *ngIf="promo" id="promo-container" class="layout-column flex-100">
+    <md-toolbar style="height: 800px; background: #1E88E5; color: white;" id="promo-toolbar">
       <div id="promo-content" class="layout-column layout-align-center-center flex-100">
         <span id="promo-title">{{ promo.title }}</span>
         <a href="{{ promo.url }}" target="_blank"><img id="promo-image" src="{{ promo.imageUrl }}"></a>
@@ -45,7 +44,7 @@
       </p>
     </md-card-content>
     <md-card-actions align="end">
-      <a md-button href="{{ topic.link }}" target="_blank">Open</a>
+      <a md-button href="{{ topic.link }}" target="_blank" color="accent">Open</a>
     </md-card-actions>
   </md-card>
 </div>

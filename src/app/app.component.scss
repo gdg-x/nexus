@@ -1,0 +1,46 @@
+md-sidenav {
+  width: 250px;
+}
+md-sidenav md-toolbar {
+  padding-left: 8px;
+  background: #1976D2;
+}
+.navButton {
+  padding: 0 6px;
+}
+md-sidenav-layout md-toolbar {
+  background: #1976D2;
+}
+md-sidenav md-toolbar span {
+  padding-left: 8px;
+}
+md-sidenav a {
+  text-align: start;
+  padding-top: 16px;
+  padding-bottom: 16px;
+  color: #3F51B5;
+}
+md-nav-list {
+  display: flex;
+}
+md-nav-list md-icon {
+  vertical-align: middle;
+  padding-right: 16px;
+}
+[md-button]:hover,
+[md-button]:focus {
+  background-color: rgba(195, 0, 47, 0.12);
+}
+#logo {
+  padding-top: 0;
+  height: 64px;
+}
+#title {
+  color: white;
+  font-size: 24px;
+  position: relative;
+  left: 0;
+  top: 5px;
+  font-weight: 200;
+  margin-left: -18px;
+}

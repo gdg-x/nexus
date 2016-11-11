@@ -1,0 +1,34 @@
+/*
+ * Sass mixins
+ */
+
+// generate min-width breakpoint
+@mixin breakpoint($point) {
+  @media (min-width: $point) { @content ; }
+}
+// generate max-width breakpoint (use sparingly)
+@mixin breakpoint-max($point) {
+  @media (max-width: $point) { @content ; }
+}
+
+// remove top margin from first child and bottom margin from last child
+@mixin first-last-no-margin {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// add clearfix to object to help with float issues
+@mixin clearfix {
+  &::after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: ' ';
+    clear: both;
+    height: 0;
+  }
+}

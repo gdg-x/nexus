@@ -1,0 +1,59 @@
+.hero-toolbar {
+  height: 300px;
+  margin-bottom: 16px;
+  background: #1E88E5;
+}
+#about-community {
+  font-size: 36px;
+  opacity: 0.7;
+  margin-bottom: 24px;
+  margin-top: 0;
+}
+#description {
+  width: 60%;
+  opacity: 0.7;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+#members {
+  opacity: 0.7;
+  font-size: 36px;
+  color: #DD0031;
+  font-style: italic;
+  margin-top: 32px;
+  margin-bottom: 0;
+}
+md-card-content > p {
+  opacity: 0.7;
+}
+md-card {
+  width: 600px;
+  margin-top: 24px;
+  margin-bottom: 48px;
+}
+#promo-button {
+  color: white;
+  background-color: #DD0031;
+  margin-bottom: 32px;
+}
+#promo-title {
+  font-size: 36px;
+  margin-bottom: 24px;
+}
+#promo-description {
+  width: 600px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+#promo-container {
+  position: relative;
+  margin: 16px 0 64px 0;
+}
+#promo-content {
+  position: relative;
+  top: 360px;
+  left: 0;
+}
+#promo-image {
+  max-width: 600px;
+}

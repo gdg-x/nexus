@@ -1,29 +1,25 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
+import { Router } from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
-import { GEvent } from './gevent';
-import { MD_CARD_DIRECTIVES } from '@angular2-material/card';
-import { EventFilter } from '../event-filter.pipe';
-import { GAbout } from '../+group-events/gabout';
+import { GEvent, GAbout } from '../models';
 import { MeetupService } from '../meetup.service';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-group-events',
   templateUrl: 'group-events.component.html',
-  styleUrls: ['group-events.component.css'],
-  providers: [MeetupService],
-  directives: [MD_CARD_DIRECTIVES],
-  pipes: [EventFilter]
+  styleUrls: ['group-events.component.scss']
 })
 export class GroupEventsComponent implements OnInit {
   errorMessage: string;
   gevents: GEvent[];
   gabouts: GAbout[];
+  imageUrl: string;
 
   constructor(private meetupService: MeetupService,
               private eventService: GroupEventsService,
-              private router: Router) {}
+              private router: Router) {
+    this.imageUrl = 'https://lh4.googleusercontent.com/pRVBaFuv3DiGnWj7x9Z9XzToAMTopbEey1211-9mRUKBCAxVfbsuwQ=w1200-h400-p';
+  }
 
   ngOnInit() {
     this.getEvents();

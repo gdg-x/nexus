@@ -1,3 +1,4 @@
+<app-global-styles></app-global-styles>
 <md-sidenav-layout class="layout-column layout-fill">
   <md-sidenav #start mode="over" class="layout-column layout-fill">
     <md-toolbar color="primary">
@@ -8,41 +9,26 @@
     </md-toolbar>
     <div>
       <md-nav-list class="layout-column">
-        <a md-button [routerLink]="['About']" class="flex" (click)="start.close()">
+        <a md-button [routerLink]="['']" (click)="start.close()">
           <md-icon class="md-24">info</md-icon>
           About</a>
-        <a md-button [routerLink]="['Groups']" class="flex" (click)="start.close()">
+        <a md-button [routerLink]="['groups']" (click)="start.close()">
           <md-icon class="md-24">group</md-icon>
           Groups</a>
-        <!--<a md-button [routerLink]="['/goals']" class="flex" (click)="start.close()">-->
-          <!--<md-icon class="md-24">assignment_turned_in</md-icon>-->
-          <!--Goals</a>-->
-        <!--<a md-button [routerLink]="['/benefits']" class="flex" (click)="start.close()">-->
-          <!--<md-icon class="md-24">beenhere</md-icon>-->
-          <!--Benefits of Membership</a>-->
-        <a md-button [routerLink]="['Conduct']" class="flex" (click)="start.close()">
+        <a md-button [routerLink]="['conduct']" (click)="start.close()">
           <md-icon class="md-24">accessibility</md-icon>
           Code of Conduct</a>
-        <!--<a md-button [routerLink]="['/group_events']" class="flex" (click)="start.close()">-->
-          <!--<md-icon class="md-24">today</md-icon>-->
-          <!--Group Events</a>-->
-        <!--<a md-button [routerLink]="['/group_about']" class="flex" (click)="start.close()">-->
-          <!--<md-icon class="md-24">info</md-icon>-->
-          <!--About Group</a>-->
-        <!--<a md-button [routerLink]="['/group_sponsor']" class="flex" (click)="start.close()">-->
-          <!--<md-icon class="md-24">local_atm</md-icon>-->
-          <!--Group Sponsor</a>-->
       </md-nav-list>
     </div>
   </md-sidenav>
 
   <md-toolbar color="primary">
-    <button md-icon-button (click)="start.open()">
+    <button md-icon-button (click)="start.open()" class="navButton">
       <md-icon class="md-24">menu</md-icon>
     </button>
     <div class="layout-row layout-fill">
       <a md-button href="/">
-        <img id="logo" src="https://cloud.githubusercontent.com/assets/3506071/15335724/7099ce50-1c28-11e6-940c-0ecf84cb3519.png">
+        <img id="logo" src="{{ navImageUrl }}">
         <span id="title">{{ title }}</span>
       </a>
     </div>
@@ -50,6 +36,6 @@
     <button md-button *ngIf="usersService.isLoggedIn" (click)="usersService.logout()">Logout</button>
   </md-toolbar>
 
-  <router-outlet class="layout-column layout-fill"></router-outlet>
+  <router-outlet></router-outlet>
 
 </md-sidenav-layout>

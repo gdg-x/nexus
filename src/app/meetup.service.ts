@@ -1,9 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Jsonp, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
-import { environment } from './environment';
-import { Topic } from './topic';
-import { MapMarker } from './map-marker';
+import { environment } from '../environments/environment';
+import { Topic, MapMarker } from './models';
 
 @Injectable()
 export class MeetupService {

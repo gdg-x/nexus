@@ -1,33 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router-deprecated';
-import { MD_SIDENAV_DIRECTIVES } from '@angular2-material/sidenav';
-import { MD_LIST_DIRECTIVES } from '@angular2-material/list';
-import { MdButton } from '@angular2-material/button';
-import { MdToolbar } from '@angular2-material/toolbar';
-import { MdIcon, MdIconRegistry } from '@angular2-material/icon';
-import { ChapterMapComponent } from '../chapter-map';
-import { MapMarker } from '../map-marker';
+import { Router } from '@angular/router';
+import { MapMarker } from '../models/map-marker';
 import { MeetupService } from '../meetup.service';
-import { environment } from '../environment';
-import { Topic } from '../topic';
+import { environment } from '../../environments/environment';
+import { Topic } from '../models';
 
 @Component({
-  moduleId: module.id,
   selector: 'app-groups',
   templateUrl: 'groups.component.html',
-  styleUrls: ['groups.component.css'],
-  directives: [
-    MdButton,
-    MdIcon,
-    MD_SIDENAV_DIRECTIVES,
-    MdToolbar,
-    MD_LIST_DIRECTIVES,
-    ChapterMapComponent
-  ],
-  providers: [
-    MdIconRegistry,
-    MeetupService
-  ]
+  styleUrls: ['groups.component.scss']
 })
 export class GroupsComponent implements OnInit {
   mapMarkers: MapMarker;
@@ -72,6 +53,6 @@ export class GroupsComponent implements OnInit {
 
   navigate(path: string) {
     this.meetupService.setUrlname(path);
-    this.router.navigate(['Group About']);
+    this.router.navigate(['group_about']);
   }
 }
