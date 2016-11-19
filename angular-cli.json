@@ -20,7 +20,7 @@
         "app-theme.html",
         "404.html",
         "favicon.ico",
-        "manifest.webapp"
+        "manifest.json"
       ],
       "styles": [
         "styles.scss"

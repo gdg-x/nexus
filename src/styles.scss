@@ -1,2 +1,29 @@
 // Don't put anything in here that depends on Polymer theming since this is loaded before Polymer is initialized.
 @import "../node_modules/bootstrap/scss/bootstrap-flex";
+
+#appShell {
+  margin: 0;
+  width: 100%;
+  min-height: 100%;
+  height: 100%;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  display: flex;
+
+  .toolbarShell {
+    background-color: #1976D2;
+    height: 64px;
+  }
+  .secondToolbarShell {
+    background-color: #1E88E5;
+    height: 300px;
+  }
+  .loadingMsg {
+    padding: 48px;
+    color: #1976D2;
+  }
+  #spacer {
+    height: 400px;
+  }
+}
