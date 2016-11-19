@@ -27,7 +27,6 @@ import {GroupSponsorComponent} from './+group-sponsor/group-sponsor.component';
 import {GroupEventsComponent} from './+group-events/group-events.component';
 import {GroupAboutComponent} from './+group-about/group-about.component';
 import {ChapterMapComponent} from './chapter-map/chapter-map.component';
-import {GroupComponent} from './+group/group.component';
 
 const firebaseAuthConfig = {
   provider: AuthProviders.Google,
@@ -54,7 +53,6 @@ const firebaseAuthConfig = {
     GroupAboutComponent,
     GroupEventsComponent,
     GroupSponsorComponent,
-    GroupComponent,
     GroupsComponent,
     ChapterMapComponent,
     GlobalStylesComponent

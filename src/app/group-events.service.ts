@@ -10,28 +10,26 @@ import 'rxjs/add/operator/map';
 
 @Injectable()
 export class GroupEventsService {
-  groupName: string = 'GDG-Kansas-City';
 
   constructor(private jsonp: Jsonp) {}
 
   // TODO get groupName from router
-  private meetupUrl = 'https://api.meetup.com/' + this.groupName + '/events' +
-                       '?photo-host=public&page=20&sig_id=12889940&key=' + environment.meetupKey +
-                       '&sig=af9ff02c67f7b43d1cce0156799398f43842bc56&callback=JSONP_CALLBACK';
+  private meetupUrlStart = `https://api.meetup.com/`;
+  private meetupUrlEnd = `/events?photo-host=public&page=20&sig_id=12889940&key=${environment.meetupKey}` +
+                         `&sig=af9ff02c67f7b43d1cce0156799398f43842bc56&callback=JSONP_CALLBACK`;
 
-  private aboutUrl = 'https://api.meetup.com/2/groups?key=' + environment.meetupKey +
-                    '&offset=0&format=json&group_urlname=' + this.groupName +
-                    '&photo-host=public&page=20&radius=25.0&fields=sponsors&order=id&desc=false' +
-                    '&sig_id=12889940&sig=ece277cfc4be272311affb8a8ef00f812181d88a&callback=JSONP_CALLBACK';
+  private aboutUrlStart = `https://api.meetup.com/2/groups?key=${environment.meetupKey}&offset=0&format=json&group_urlname=`;
+  private aboutUrlEnd = `&photo-host=public&page=20&radius=25.0&fields=sponsors&order=id&desc=false` +
+                        `&sig_id=12889940&sig=ece277cfc4be272311affb8a8ef00f812181d88a&callback=JSONP_CALLBACK`;
 
- getEvents(): Observable<GEvent[]> {
-    return this.jsonp.get(this.meetupUrl)
+ getEvents(groupName: string): Observable<GEvent[]> {
+    return this.jsonp.get(`${this.meetupUrlStart}${groupName}${this.meetupUrlEnd}`)
     .map(this.extractData)
     .catch(this.handleError);
   }
 
-  getAbout(): Observable<GAbout[]> {
-    return this.jsonp.get(this.aboutUrl)
+  getAbout(groupName: string): Observable<GAbout[]> {
+    return this.jsonp.get(`${this.aboutUrlStart}${groupName}${this.aboutUrlEnd}`)
     .map(this.extractResults)
     .catch(this.handleError);
   }

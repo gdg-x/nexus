@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 import {AboutComponent} from './+about/about.component';
 import {GroupsComponent} from './+groups/groups.component';
-import {GroupComponent} from './+group/group.component';
 import {GoalsComponent} from './+goals/goals.component';
 import {BenefitsComponent} from './+benefits/benefits.component';
 import {ConductComponent} from './+conduct/conduct.component';
@@ -16,10 +15,9 @@ const routes: Routes = [
   {path: 'goals', component: GoalsComponent},
   {path: 'benefits', component: BenefitsComponent},
   {path: 'conduct', component: ConductComponent},
-  {path: 'group', component: GroupComponent},
-  {path: 'group_events', component: GroupEventsComponent},
-  {path: 'group_about', component: GroupAboutComponent},
-  {path: 'group_sponsor', component: GroupSponsorComponent}
+  {path: 'groups/:id/events', component: GroupEventsComponent},
+  {path: 'groups/:id/about', component: GroupAboutComponent},
+  {path: 'groups/:id/sponsors', component: GroupSponsorComponent}
 ];
 
 @NgModule({

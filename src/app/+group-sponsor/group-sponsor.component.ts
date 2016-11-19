@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import {Router, ActivatedRoute, Params} from '@angular/router';
 import { GroupEventsService } from '../group-events.service';
 import { GAbout } from '../models';
 import { MeetupService } from '../meetup.service';
@@ -11,24 +11,41 @@ import { MeetupService } from '../meetup.service';
 })
 export class GroupSponsorComponent implements OnInit {
   errorMessage: string;
-  gabouts: GAbout[];
+  gabout: GAbout;
+  chapterName: string;
 
-  constructor(private meetupService: MeetupService,
-              private eventService: GroupEventsService,
-              private router: Router) {}
+  constructor(private eventService: GroupEventsService,
+              private router: Router,
+              private route: ActivatedRoute) {
+    route.params.subscribe((params: Params) => {
+      this.chapterName = params['id'];
+      console.log('Opening events for: ' + this.chapterName);
+    });
+  }
 
   ngOnInit() {
     this.getSponsors();
   }
 
   getSponsors() {
-    this.eventService.getAbout()
+    this.eventService.getAbout(this.chapterName)
     .subscribe(
-      gabouts => this.gabouts = gabouts,
-      error => this.errorMessage = <any>error);
+      gabouts => {
+        this.gabout = gabouts[0];
+      },
+      error => this.errorMessage = <any>error
+    );
   }
 
-  navigate(path: string) {
-    this.router.navigate([path]);
+  openEvents() {
+    this.router.navigate([`groups/${this.chapterName}/events`]);
+  }
+
+  openAbout() {
+    this.router.navigate([`groups/${this.chapterName}/about`]);
+  }
+
+  openSponsors() {
+    this.router.navigate([`groups/${this.chapterName}/sponsors`]);
   }
 }
