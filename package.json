@@ -12,8 +12,8 @@
   },
   "angular-cli": {},
   "scripts": {
-    "build": "vulcanize; ng build",
-    "build-prod": "vulcanize; ng build -prod",
+    "build": "npm run vulcanize; ng build",
+    "build-prod": "npm run vulcanize; ng build -prod",
     "deploy": "firebase deploy",
     "start": "ng serve",
     "postinstall": "bower install",

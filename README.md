@@ -14,14 +14,21 @@ GDG[x] Nexus
 
 * `npm install`
 
-* `ng serve` will start a server locally to test that everything is running correctly
+* `npm run build`
 
+* `npm start` will start a server locally to test that everything is running correctly
 
-### Step 2) Deploy Your App
+### Step 2) Customize Your App
 
-* Generate minimized production build - `ng build -prod`
+* Coming soon...
 
-* TBA
+### Step 3) Deploy Your App
+
+* Update `.firebaserc` and change the default to your Firebase project name
+
+* Generate minimized production build - `npm run build-prod`
+
+* `npm run deploy`
 
 ###Contributors
 See [list of contributors](https://github.com/gdg-x/nexus/graphs/contributors)
