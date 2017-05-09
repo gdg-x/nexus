@@ -3,6 +3,9 @@ GDG[x] Nexus
 
 [![Join the chat at https://gitter.im/gdg-x/nexus](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/gdg-x/nexus)
 
+# Project Status
+This project is currently stale and on hold due to a lack of time and resources. It will likely be closed in the next few months.
+
 ## Required tools
 * [Node.js](https://nodejs.org/download/)
 
@@ -30,7 +33,7 @@ GDG[x] Nexus
 
 * `npm run deploy`
 
-###Contributors
+### Contributors
 See [list of contributors](https://github.com/gdg-x/nexus/graphs/contributors)
 
 Maintainer: [@splaktar](https://github.com/splaktar).
@@ -38,4 +41,4 @@ Maintainer: [@splaktar](https://github.com/splaktar).
 This application was started during the [Angular Attack](https://www.angularattack.com/) Hackathon by
  Kyle Paul, Valerie Scarlata, Emily Bamsey, and Michael Prentice.
 
-######GDG Apps, GDG[x] are not endorsed and/or supported by Google, the corporation.
+###### GDG Apps, GDG[x] are not endorsed and/or supported by Google, the corporation.
